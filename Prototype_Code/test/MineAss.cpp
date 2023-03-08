@@ -22,7 +22,7 @@ void UcanRandomMenuInThisStore(){
     
     if (!L1.is_open()) { //First check that the file can be open.
         cout << "Failed to open file!" << endl;
-        exit(0); //search มา อยู่ใน <cstdlib>
+        exit(1); //search มา อยู่ใน <cstdlib>
     }
     
     vector <string> storeItems;
@@ -30,7 +30,7 @@ void UcanRandomMenuInThisStore(){
     int i = 1;
     while(getline(L1,name)){
         cout << i << " - " << name << endl;
-        storeItems.push_back(name);
+        storeItems.push_back(name); //collect name of store
         i++; // because this
     }
     
@@ -63,10 +63,7 @@ void UcanRandomMenuInThisStore(){
         case 3:
             fileName = "StoreC";
             break;
-        default:
-            cout << "Invalid selection!" << endl;
-            break;
-        }
+       }
 
     
     L2.open("Menu_in_store/"+ fileName + ".txt");
@@ -88,7 +85,7 @@ void UcanRandomMenuInThisStore(){
                 if(location == "/where"){
                     break;
                 }
-                cout << storeItems[storeSelection-1] << "'s Location: " << location << endl;
+                cout << storeItems[storeSelection-1] << "'s Location: " << location << endl; // [] 0 1 2 เลย -1
             }
             cout << "**---------------------------**" << endl;
         }else if (line != "/where") {
@@ -122,10 +119,12 @@ void UcanRandomMenuInThisStore(){
 
         switch(choice){
         case 1: {
-            cout << "Menu items:" << endl;
+            cout << "**---------------------------**" << endl;
+            cout << "All menu in this Store:" << endl;
             for (int i = 0; i < menuItems.size(); i++) {
             cout << "- " << menuItems[i] << endl;
             }
+            cout << "**---------------------------**" << endl;
             break;
         }
         case 2: {
@@ -133,7 +132,7 @@ void UcanRandomMenuInThisStore(){
             int random = rand() % numofMenuItems;
             string randomMenuItem = menuItems[random]; //menu in vector that add before.
             cout << "-------------------------------" << endl;
-            cout << "Random menu item: " << randomMenuItem << endl;
+            cout << "I adivce you to choose: " << randomMenuItem << endl;
             cout << "-------------------------------" << endl;
             break;
         }

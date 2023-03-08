@@ -39,7 +39,9 @@ void cho_func2_active()
             case '1': cout << "รอเรียกใช้ฟังก์ชั่นหลักของกลุ่มเรา (AI_working.h line 142 and 36)" << endl; //รอเรียกใช้ function หลักของกลุ่มเรา
                     cho_func2_active(); 
                     break; 
-            case '2': coutdown_to_shutdown:: main_countdown_1(); cho_func2_active(); break;
+            case '2': //coutdown_to_shutdown:: main_countdown_1(); 
+                        cout << "โค้ดนี้เอาออกไปแล้ว" << endl;
+                        cho_func2_active(); break;
             case '3': talk_with_me_active();cho_func2_active(); break;
             case '4': Lazy_ai_intro(::name); break;
             case '5': 
@@ -173,7 +175,8 @@ void cho_func2_lazy()
                         }
             case '3': talk_with_me_lazy(do_it_or_not());
                     break;
-            case '4': turn_off_lazy_text(); 
+            case '4': //turn_off_lazy_text(); 
+                        cout << "โค้ดนี้เอาออกไปแล้ว" << endl;
                         active_ai_intro(::name);//(::name); 
                         break;
             case '5': 

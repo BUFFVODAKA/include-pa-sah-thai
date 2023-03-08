@@ -8,13 +8,12 @@
 using namespace std;
 
 void UcanRandomMenuInThisStore(){
-    // Display store options
     ifstream L1,L2;
     string fileName;
     string allstore = "Menu_in_store/Store_list.txt";
     
     cout << "**---------------------------**" << endl;
-    cout << "Welcome to HIDDEN Store" << endl;
+    cout << "Welcome to HIDDEN Store" << endl;           //Display.
     cout << "**---------------------------**" << endl;
    
     cout << "Please select a store:" << endl;
@@ -32,7 +31,7 @@ void UcanRandomMenuInThisStore(){
     while(getline(L1,name)){
         cout << i << " - " << name << endl;
         storeItems.push_back(name);
-        i++;
+        i++; // because this
     }
     
     int numofStore = storeItems.size(); //จำนวน store ทั้งหมดที่มี
@@ -40,12 +39,12 @@ void UcanRandomMenuInThisStore(){
     // Get store selection from user
     int storeSelection;
     do{
-        cout << "Enter selection (1-" << i-1 << ") or Random (0): ";
-        cin >> storeSelection;
+        cout << "Enter selection (1-" << i-1 << ") or Random (0): "; // i-1 is all number of storename
+        cin >> storeSelection; //For now cant recieve more than 1 input.
         if(storeSelection < 0 || storeSelection > i-1){
         cout << "Invalid selection! Please enter a number between 0 and 3." << endl;
         }
-    }while(storeSelection < 0 || storeSelection > i-1); //ถ้าจะใช้ while สลับเอา
+    }while(storeSelection < 0 || storeSelection > i-1); //ถ้าจะใช้ while(-1) สลับเอา check ว่า storeselec in 0<s<i-1
     
     
     if(storeSelection == 0){
@@ -54,7 +53,7 @@ void UcanRandomMenuInThisStore(){
         
     }
     
-    switch (storeSelection) {
+    switch (storeSelection) { //ดูท่าจะมีหลาย case
         case 1: 
             fileName = "StoreA";
             break;
@@ -74,10 +73,10 @@ void UcanRandomMenuInThisStore(){
 
     if (!L2.is_open()) { //First check that the file can be open.
         cout << "Failed to open file!" << endl;
-        exit(0); //search มา อยู่ใน <cstdlib>
+        exit(0); //search มา อยู่ใน <cstdlib> or exit(1) not sure
     }
     
-    vector<string> menuItems;
+    vector<string> menuItems; //menu in any store
     string line;
     while (getline(L2, line)) {
         if (line == "where") {
@@ -100,12 +99,12 @@ void UcanRandomMenuInThisStore(){
     }
     
 
-    L2.close();
+    L2.close(); //close
     
     int numofMenuItems = menuItems.size();
     if (numofMenuItems == 0) {
         cout << "No menu items found!" << endl;
-        exit(1);
+        exit(1); // check that store have menu otherwise end.
        
     }
 
@@ -140,7 +139,7 @@ void UcanRandomMenuInThisStore(){
         }
         case 3: {
             cout << "Thanks for using our system.";
-            exit(0);
+            exit(1); 
             break; //quit.
         }
         default: {
@@ -153,7 +152,7 @@ void UcanRandomMenuInThisStore(){
 }
 
 int main() {
-    UcanRandomMenuInThisStore();
+    UcanRandomMenuInThisStore(); //call function
 }
 
    

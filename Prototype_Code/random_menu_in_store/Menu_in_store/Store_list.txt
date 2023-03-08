@@ -1,3 +1,0 @@
-StoreA
-StoreB
-StoreC

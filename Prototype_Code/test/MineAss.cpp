@@ -39,12 +39,12 @@ void UcanRandomMenuInThisStore(){
     // Get store selection from user
     int storeSelection;
     do{
-        cout << "Enter selection (1-" << i-1 << ") or Random (0): "; // i-1 is all number of storename
+        cout << "Enter selection (1-" << numofStore << ") or Random (0): "; 
         cin >> storeSelection; //For now cant recieve more than 1 input.
-        if(storeSelection < 0 || storeSelection > i-1){
-        cout << "Invalid selection! Please enter a number between 0 and 3." << endl;
+        if(storeSelection < 0 || storeSelection > numofStore){
+        cout << "Invalid selection! Please enter a number between 0 and " << numofStore << "." << endl;
         }
-    }while(storeSelection < 0 || storeSelection > i-1); //ถ้าจะใช้ while(-1) สลับเอา check ว่า storeselec in 0<s<i-1
+    }while(storeSelection < 0 || storeSelection > numofStore); //ถ้าจะใช้ while(-1) สลับเอา check ว่า storeselec in 0<s<i-1
     
     
     if(storeSelection == 0){

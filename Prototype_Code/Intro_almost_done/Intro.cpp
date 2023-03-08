@@ -16,7 +16,7 @@ void Nono(string &name)
 {
     system("cls"); //ใช้เคลียร์ terminal
     cout << "y and n only" << endl;
-    give_name(name);
+    //give_name(name);
 }
 
 void give_name(string &name)
@@ -25,36 +25,48 @@ void give_name(string &name)
     vector <string> _say = {"ชื่อ Chat bot นี้ถูกตั้งเป็นค่าเริ่มต้น ("+name+") เรียบร้อยแล้ว","กรุณาใส่ชื่อที่คุณต้องการ (ถ้าไม่ใส่อะไรเลยชื่อจะกลายเป็นชื่อเริ่มต้น (" +name+") และ Enter เฉยๆ ก็ถือว่าใส่ชื่อแล้วนะ)"};
     my_command::cout_string_dalay(say);
 
-    char ans[3]; //แค่จองเผื่อ
+    bool flag = false;
 
-    cin >> ans;
-    cin.clear(); //สำหรับเคลียร์ตัวที่เหลือ
-    fflush(stdin); //ใช้กับ clear
-
-    if (ans[1] == '\0')
+    do
     {
-        switch (ans[0])
+        char ans[3]; //แค่จองเผื่อ
+
+        cin >> ans;
+        cin.clear(); //สำหรับเคลียร์ตัวที่เหลือ
+        fflush(stdin); //ใช้กับ clear
+
+        if (ans[1] == '\0')
         {
-            case 'y':case 'Y':
-                my_command::cout_string_dalay(_say[1]);
-                getline(cin, name);
-                say = "ชื่อ Chat bot นี้ถูกตั้งเป็น "+name+" เรียบร้อยแล้ว";
-                my_command::cout_string_dalay(say);
-                Sleep(1000);
-                break;
-            case 'n':case 'N':
-                my_command::cout_string_dalay(_say[0]);
-                Sleep(1000);
-                break;
-            default:
-                Nono(name);
-                break;
+            switch (ans[0])
+            {
+                case 'y':case 'Y':
+                    my_command::cout_string_dalay(_say[1]);
+                    getline(cin, name);
+                    say = "ชื่อ Chat bot นี้ถูกตั้งเป็น "+name+" เรียบร้อยแล้ว";
+                    my_command::cout_string_dalay(say);
+                    flag = true;
+                    Sleep(1000);
+                    break;
+                case 'n':case 'N':
+                    my_command::cout_string_dalay(_say[0]);
+                    Sleep(1000);
+                    flag = true;
+                    break;
+                default:
+                    // system("cls"); //ใช้เคลียร์ terminal
+                    // cout << "y and n only" << endl;
+                    Nono(name);
+                    break;
+            }
         }
+        else 
+        {
+            Nono(name);
+        }
+
     }
-    else 
-    {
-        Nono(name);
-    }
+    while(flag != true);
+
 
 }
 

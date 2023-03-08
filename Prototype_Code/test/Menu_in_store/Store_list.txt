@@ -1,0 +1,3 @@
+StoreA
+StoreB
+StoreC

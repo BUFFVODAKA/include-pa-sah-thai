@@ -9,7 +9,7 @@ using namespace std;
 
 void GetDrinkList(vector<string> &DrinksLists,string FileNames){
     ifstream source;
-    source.open(FileNames.c_str());
+    source.open(FileNames);//(FileNames.c_str());
     string DrinksList;
     while(getline(source,DrinksList)){
         DrinksLists.push_back(DrinksList);
@@ -22,20 +22,28 @@ int main(){
     vector<string> DrinksLists;
     GetDrinkList(DrinksLists,FileNames);
     int Choice;
+    int ListSize = DrinksLists.size();
+    int RNG;
+    srand(time(0));
     do{
-        cout << "Please Select (0)Stop Asking (1)See The List of Drinks (2)Suggest Drinks for you\n";
+        cout << "โปรดเลือกทางเลือกของท่าน (0)เลิกถามและพากลับไปหน้าแรก (1)เอารายชื่อเครื่องดื่มมา (2)แนะนำเครื่องดื่มมาซิ\n";
         cin >> Choice;
+        cin.clear();
+        fflush(stdin);
         if(Choice == 0){
+            cout << "ออกจากฟังก์ชั่น" << endl;
             break;
         }else if(Choice == 1){
             for(int i = 0; i < DrinksLists.size(); i++){
                 cout << "(" << i+1 << ")" << DrinksLists[i] << "\n";
             }
         }else if(Choice == 2){
-            int RNG = rand()%(DrinksLists.size()+1);
-            cout << "We Suggest you to drink " << DrinksLists[RNG] << "\n";
+            RNG = rand()%ListSize;
+            //cout << RNG; **debug มาคับ
+            cout << "เราแนะนำให้ท่านดื่ม " << DrinksLists[RNG] << "\n";
+            //cout << "exit" << endl; **debug อีกหนึ่งกรุบกริบ
         }else{
-            cout << "Invalid Input" << "\n";
+            cout << "ใส่เลขผิดนะจ๊ะ" << "\n";
         }
     }while(Choice != 0);
 }

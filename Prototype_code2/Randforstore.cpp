@@ -147,8 +147,8 @@ int main()
         {
             if(allstore[i].menu[j] == menu_need){
                 cout << endl << "**---------------------------**" << endl;
-                cout << "We suggest " << allstore[i].store_name << " at " << allstore[i].where;
-                cout << " to eat this day!!";
+                cout << "\nWe suggest " << allstore[i].store_name << " at " << allstore[i].where;
+                cout << " to eat this day!!\n";
                 cout << endl << "**---------------------------**" << endl;
             }
         }

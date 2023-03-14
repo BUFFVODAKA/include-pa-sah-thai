@@ -1,5 +1,5 @@
 #include "command_list.h"
-#include "shutdown_function.h"
+//#include "shutdown_function.h" //ไม่ใช้แล้ว
 
 string name;
 
@@ -40,7 +40,7 @@ void cho_func2_active()
                     cho_func2_active(); 
                     break; 
             case '2': //coutdown_to_shutdown:: main_countdown_1(); 
-                        cout << "โค้ดนี้เอาออกไปแล้ว" << endl;
+                        cout << "โค้ดนี้เอาออกไปแล้ว (43 c]t 167)" << endl;
                         cho_func2_active(); break;
             case '3': talk_with_me_active();cho_func2_active(); break;
             case '4': Lazy_ai_intro(::name); break;
@@ -164,7 +164,8 @@ void cho_func2_lazy()
                         }
             case '2': if(do_it_or_not())
                         {
-                            coutdown_to_shutdown:: main_countdown_1();
+                            cout << "โค้ดนี้เอาออกไปแล้ว (43 c]t 167)" << endl;
+                            //coutdown_to_shutdown:: main_countdown_1();
                             cho_func2_lazy(); 
                             break;
                         }

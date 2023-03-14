@@ -53,8 +53,6 @@ void give_name(string &name)
                     flag = true;
                     break;
                 default:
-                    // system("cls"); //ใช้เคลียร์ terminal
-                    // cout << "y and n only" << endl;
                     Nono(name);
                     break;
             }

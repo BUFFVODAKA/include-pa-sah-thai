@@ -2,11 +2,13 @@
 #include <string>
 #include <vector>
 #include <Windows.h> //Sleep()
+#include <fstream>
+#include <ctime>
 //#include <cstdlib>
 #include <conio.h> //getch()
 //#include <stdio.h>
 
-#include "AI_working.h"
+#include "AI_working.h" //my_header
 
 using namespace std;
 

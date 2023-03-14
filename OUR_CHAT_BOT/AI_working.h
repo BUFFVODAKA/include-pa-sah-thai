@@ -1,5 +1,6 @@
 #include "command_list.h"
 //#include "shutdown_function.h" //ไม่ใช้แล้ว
+#include "Random_Drinks.h"
 
 string name;
 
@@ -13,7 +14,7 @@ void talk_with_me_active()
 
 void cho_func2_active()
 {
-    vector <string> list_command = {"สุ่มร้านอาหาร(1)                        (แนะนำ)","ตั้งเวลาปิดเครื่อง(2)                     (จะลองก็ได้ ตั้งใจทำอยู่นะอันนี้)","คุยเล่นกับฉัน(3)                         (ฉันใช้ if-else เด้อ ไม่ใช่ Ai อย่าหวังเยอะจะดีกว่า)","เปิดโหมบอทขี้เกียจ(4)                    (แน่ใจรึ ว่า จะเล่นอันนี้้)","ออก(5)"};
+    vector <string> list_command = {"สุ่มร้านอาหาร(1)                        (แนะนำ ฟังก์ชั่นหลักเลย)","สุ่มเครื่องดื่ม(2)                         (จะลองก็ได้นะ อันนี้)","คุยเล่นกับฉัน(3)                         (ฉันใช้ if-else เด้อ ไม่ใช่ Ai อย่าหวังเยอะจะดีกว่า)","เปิดโหมบอทขี้เกียจ(4)                    (แน่ใจรึ ว่า จะเล่นอันนี้้)","ออก(5)"};
     string bye = "โอเค แล้วเจอกันใหม่นะ";
 
     string ANS;
@@ -40,7 +41,8 @@ void cho_func2_active()
                     cho_func2_active(); 
                     break; 
             case '2': //coutdown_to_shutdown:: main_countdown_1(); 
-                        cout << "โค้ดนี้เอาออกไปแล้ว (43 c]t 167)" << endl;
+                        //cout << "โค้ดนี้เอาออกไปแล้ว (43 และ 167)" << endl;
+                        random_drink::main_random_drink();
                         cho_func2_active(); break;
             case '3': talk_with_me_active();cho_func2_active(); break;
             case '4': Lazy_ai_intro(::name); break;
@@ -128,7 +130,7 @@ system("cls"); //clear
 
 void cho_func2_lazy()
 {
-    vector <string> list_command = {"สุ่มร้าน(1)","ตั้งเวลาปิดเครื่อง(2)","คุยเล่น(3)","ปิดโหมบอทขี้เกียจ(4)","ออก(5)"};
+    vector <string> list_command = {"สุ่มร้าน(1)","สุ่มเครื่องดื่ม(2)","คุยเล่น(3)","ปิดโหมบอทขี้เกียจ(4)","ออก(5)"};
     string bye = "โอเค แล้วเจอกัน";
 
     string ANS;
@@ -164,20 +166,20 @@ void cho_func2_lazy()
                         }
             case '2': if(do_it_or_not())
                         {
-                            cout << "โค้ดนี้เอาออกไปแล้ว (43 c]t 167)" << endl;
+                            //cout << "โค้ดนี้เอาออกไปแล้ว (43 และ 167)" << endl;
                             //coutdown_to_shutdown:: main_countdown_1();
+                            random_drink::main_random_drink();
                             cho_func2_lazy(); 
                             break;
                         }
                         else
                         {
-                            cout << "ขี้เขียจแล้วอ่ะ กดปิดเองได้เลยนะ ฉันไปล่ะ" << endl; 
+                            cout << "ขี้เขียจแล้วอ่ะ ไปเดินหาร้านเครื่องดื่มเอาเองแล้วกันนะ ฉันไปล่ะ" << endl; 
                             break;
                         }
             case '3': talk_with_me_lazy(do_it_or_not());
                     break;
-            case '4': //turn_off_lazy_text(); 
-                        cout << "โค้ดนี้เอาออกไปแล้ว" << endl;
+            case '4': turn_off_lazy_text(); 
                         active_ai_intro(::name);//(::name); 
                         break;
             case '5': 
@@ -205,6 +207,7 @@ void Lazy_ai_intro(string name)
     
     my_command::cout_string_dalay(activate);
     Sleep(1000);
+    system("cls");
 
     my_command::cout_vector_string_delay(say);
     cout << "กดอะไรก็ได้เพื่อไปต่อ เพื่อไปต่อ\r";

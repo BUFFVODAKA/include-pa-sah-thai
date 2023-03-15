@@ -73,6 +73,5 @@ void main_talk_bot(string name)
         }
     }while(Choice != "0");
 
-
 }
 

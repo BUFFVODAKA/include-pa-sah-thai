@@ -144,6 +144,7 @@ void UcanRandomMenuInThisStore(){
             cout << setw(1) << ":";
             cout << setw(29) << right << randomMenuItem << endl;
             cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━❂❂━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl;
+            exit(1);
             break;
         }
         case 3: {

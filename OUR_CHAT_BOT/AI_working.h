@@ -1,6 +1,7 @@
 #include "command_list.h"
 //#include "shutdown_function.h" //ไม่ใช้แล้ว
 #include "Random_Drinks.h"
+#include "rand_store_and_food_main.h"
 
 string name;
 
@@ -37,7 +38,8 @@ void cho_func2_active()
         
         switch(ans)
         {
-            case '1': cout << "รอเรียกใช้ฟังก์ชั่นหลักของกลุ่มเรา (AI_working.h line 142 and 36)" << endl; //รอเรียกใช้ function หลักของกลุ่มเรา
+            case '1': //cout << "รอเรียกใช้ฟังก์ชั่นหลักของกลุ่มเรา (AI_working.h line 142 and 36)" << endl; //รอเรียกใช้ function หลักของกลุ่มเรา
+                    main_function::intro_rand_food_store();
                     cho_func2_active(); 
                     break; 
             case '2': //coutdown_to_shutdown:: main_countdown_1(); 

@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <iomanip> // for setw() setprecision() ไรทำนองนั้น
 #include <cstdlib> // for rand and srand
 #include <ctime> // for time
 
@@ -12,38 +13,46 @@ void UcanRandomMenuInThisStore(){
     string fileName;
     string allstore = "Menu_in_store/Store_list.txt";
     
-    cout << "**---------------------------**" << endl;
-    cout << "Welcome to HIDDEN Store" << endl;           //Display.
-    cout << "**---------------------------**" << endl;
+    cout << "❀⊱┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⊰❀" << endl;
+    cout << endl;
+    cout << setw(7) << left << " " << "ยินดีต้อนรับสู้ร้านอาหารอร่อยใกล้ มช." << endl;   
+    cout << endl;
+    cout << "❀⊱┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⊰❀" << endl;
+    cout << endl;
    
-    cout << "Please select a store:" << endl;
-    
     L1.open(allstore);
     
     if (!L1.is_open()) { //First check that the file can be open.
-        cout << "Failed to open file!" << endl;
+        cout << "เอิ่ม อยากจะบอกว่าหาร้าน บ่ เจอ กดใหม่ๆ!" << endl;
         exit(1); //search มา อยู่ใน <cstdlib>
     }
     
     vector <string> storeItems;
     string name;
     int i = 1;
+    cout << "•—————————————————•°•✿•°——————————————————•" << endl;
+    cout << setw(10) << left << " " << "เลือกร้่านได้เลยไอ้หนุ่ม!! " << endl;
     while(getline(L1,name)){
-        cout << i << " - " << name << endl;
+        cout << "[" << i << "]." << " " << name << endl;
         storeItems.push_back(name); //collect name of store
         i++; // because this
     }
+    cout << "•—————————————————•°•✿•°——————————————————•"  << endl;
+    cout << endl;
     
     int numofStore = storeItems.size(); //จำนวน store ทั้งหมดที่มี
 
     // Get store selection from user
     int storeSelection;
     do{
-        cout << "Enter selection (1-" << numofStore << ") or Random (0): "; 
+        cout << "❀⊱┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⊰❀" << endl;
+        cout << "เลือกระหว่าง (1-" << numofStore << ") หรือ อยากจะสุ่มก็ตามจายย (0)" << endl; 
+        cout << "❀⊱┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⊰❀" << endl;
         cin >> storeSelection; //For now cant recieve more than 1 input.
         if(storeSelection < 0 || storeSelection > numofStore){
-        cout << "Invalid selection! Please enter a number between 0 and " << numofStore << "." << endl;
+        cout << "ก็บอกแล้วไงให้เลือกแค่ (1-" << numofStore << ") หรือไม่ก็สุ่ม (0)" << endl;
         }
+        
     }while(storeSelection < 0 || storeSelection > numofStore); //ถ้าจะใช้ while(-1) สลับเอา check ว่า storeselec in 0<s<i-1
     
     
@@ -69,10 +78,9 @@ void UcanRandomMenuInThisStore(){
     L2.open("Menu_in_store/"+ fileName + ".txt");
 
     if (!L2.is_open()) { //First check that the file can be open.
-        cout << "Failed to open file!" << endl;
+        cout << "เราหาร้านไม่เจอง่ะ! (ลองเลือกใหม่ๆ)" << endl;
         exit(0); //search มา อยู่ใน <cstdlib> or exit(1) not sure
     }
-    
     vector<string> menuItems; //menu in any store
     string line;
     while (getline(L2, line)) {
@@ -80,14 +88,14 @@ void UcanRandomMenuInThisStore(){
             // read the next line as the Nameof location.
             string location;
             cout << endl;
-            cout << "**---------------------------**" << endl;
+            cout << "✦•·················•✦•··················•✦" << endl;
             while(getline(L2, location)){ //เผื่อว่า the location have more than one line.
                 if(location == "/where"){
                     break;
                 }
-                cout << storeItems[storeSelection-1] << "'s Location: " << location << endl; // [] 0 1 2 เลย -1
+                cout << storeItems[storeSelection-1] << " " << "ร้่านนี้อยู่แถวๆ " << location << "มอ" << endl; // [] 0 1 2 เลย -1
             }
-            cout << "**---------------------------**" << endl;
+            cout << "✦•·················•✦•··················•✦"  << endl;
         }else if (line != "/where") {
             menuItems.push_back(line); // the next line is the menu.
         }
@@ -100,49 +108,50 @@ void UcanRandomMenuInThisStore(){
     
     int numofMenuItems = menuItems.size();
     if (numofMenuItems == 0) {
-        cout << "No menu items found!" << endl;
+        cout << "ร้่านนี้ไม่มีเมนู (แล้วเขาเปิดร้านทำไม?)" << endl;
         exit(1); // check that store have menu otherwise end.
        
     }
 
     while (true) {
         cout << endl;
-        cout << "================================" << endl;
-        cout << "Choose an option:" << endl;
-        cout << "[1]. List all menu in This Store" << endl;
-        cout << "[2]. Randomly select a menu" << endl;
-        cout << "[3]. Quit" << endl;
-        cout << "================================" << endl;
+        cout << "❀⊱┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⊰❀" << endl;
+        cout << "เอาหละต่อมาฉันมี 3 อย่างให้นายเลือก:" << endl;
+        cout << "[1]. ขอดูเมนูทั้งหมดในร้านนี้(เผื่ออยากดูก่อน)" << endl;
+        cout << "[2]. นึกอะไรไม่ออกก็กดอันนี้นะ (เดี๋ยวสุ่มให้เองง)" << endl;
+        cout << "[3]. ออก!" << endl;
+        cout << "❀⊱┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⊰❀" << endl;
 
         int choice;
         cin >> choice;
 
         switch(choice){
         case 1: {
-            cout << "**---------------------------**" << endl;
-            cout << "All menu in this Store:" << endl;
+            cout << "•—————————————————•°•✿•°——————————————————•" << endl;
+            cout << "เท่าที่เรารู้มาในร้่่านนี้มีเมนู" << endl;
             for (int i = 0; i < menuItems.size(); i++) {
             cout << "- " << menuItems[i] << endl;
             }
-            cout << "**---------------------------**" << endl;
+            cout << "•—————————————————•°•✿•°——————————————————•" << endl;
             break;
         }
         case 2: {
             srand(time(0)); // seed the random number generator with the current time.
             int random = rand() % numofMenuItems;
             string randomMenuItem = menuItems[random]; //menu in vector that add before.
-            cout << "-------------------------------" << endl;
-            cout << "I adivce you to choose: " << randomMenuItem << endl;
-            cout << "-------------------------------" << endl;
+            cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━❂❂━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
+            cout << setw(50) << left << " แนะนำนะเราว่าควรเลือกเมนู";
+            cout << setw(1) << ":";
+            cout << setw(29) << right << randomMenuItem << endl;
+            cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━❂❂━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl;
             break;
         }
         case 3: {
-            cout << "Thanks for using our system.";
             exit(1); 
             break; //quit.
         }
         default: {
-            cout << "Invalid choice!" << endl;
+            cout << "อย่าดื้อสิบอกว่ามีให้เลือกแค่ (1-3) ไง" << endl;
             break;
         }
         }
@@ -155,4 +164,3 @@ int main() {
 }
 
    
-

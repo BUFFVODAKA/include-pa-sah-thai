@@ -4,9 +4,8 @@
 #include <Windows.h> //Sleep()
 #include <fstream>
 #include <ctime>
-//#include <cstdlib>
+#include <iomanip>
 #include <conio.h> //getch()
-//#include <stdio.h>
 
 #include "AI_working.h" //my_header
 
@@ -72,6 +71,7 @@ void give_name(string &name)
 
 int main()
 {
+    srand(time(0));
     system("cls");
     string name = "AI จีบีที่"; // เปลี่ยนชื่อได้นะ
 

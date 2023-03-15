@@ -57,4 +57,27 @@ namespace my_command
         //     Sleep(3);
         // }
     }
+
+    void cout_delay_vector_and_wait(vector <string> say)
+    {
+        for (int j =0; j < say.size(); j++)
+        {
+            for(int i = 0; i<say[j].size();i++)
+            {
+                cout <<say[j][i];
+                Sleep(3);
+            }
+            cout << endl;
+            Sleep(1000);
+        }
+    }
+
+    void showcommand_and_line(vector <string> say)
+    {
+        for(string i: say)
+        {
+            cout << i << endl;
+        }
+        cout << say[0] << endl;
+    }
 }

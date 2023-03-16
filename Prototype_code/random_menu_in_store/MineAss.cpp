@@ -11,7 +11,7 @@ using namespace std;
 void UcanRandomMenuInThisStore(){
     ifstream L1,L2;
     string fileName;
-    string allstore = "Data/Menu_in_store/Store_list.txt";
+    string allstore = "Data/Store_list.txt";
     
     cout << "❀⊱┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⊰❀" << endl;
     cout << endl;
@@ -83,7 +83,7 @@ void UcanRandomMenuInThisStore(){
        }
 
     
-    L2.open("Menu_in_store/"+ fileName + ".txt");
+    L2.open("Data/Menu_in_store/"+ fileName + ".txt");
 
     if (!L2.is_open()) { //First check that the file can be open.
         cout << "เราหาร้านไม่เจอง่ะ! (ลองเลือกใหม่ๆ)" << endl;

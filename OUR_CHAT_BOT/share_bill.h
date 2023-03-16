@@ -70,6 +70,6 @@ void share_bill() {
     cout << "ราคารวมทั้งสิ้นของสินค้าทั้งหมด: " << total_product_price << " บาท" << endl;
     cout << "ขอบคุณที่เข้ามาใช้โปรเเกรมของเรา" << endl;
 
-    return 0;
+    
 }
 }

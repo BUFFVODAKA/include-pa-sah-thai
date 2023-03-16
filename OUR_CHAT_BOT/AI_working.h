@@ -22,7 +22,7 @@ void talk_with_me_active()
 
 void cho_func2_active()
 {
-    vector <string> list_command = {"สุ่มร้านอาหาร(1)                        (แนะนำ ฟังก์ชั่นหลักเลย)","สุ่มเครื่องดื่ม(2)                         (จะลองก็ได้นะ อันนี้)","คุยเล่นกับฉัน(3)                         (ฉันใช้ if-else เด้อ ไม่ใช่ Ai อย่าหวังเยอะจะดีกว่า)","เปิดโหมบอทขี้เกียจ(4)                    (แน่ใจรึ ว่า จะเล่นอันนี้้)","คำนวณการแชร์บิล(5)","นับเวลาถอยหลัง(6)                      (ลองก็ได้นะ ตั้งใจทำอยู่)","ออก(0)"};
+    vector <string> list_command = {"สุ่มร้านอาหาร(1)                        (แนะนำ ฟังก์ชั่นหลักเลย)","สุ่มเครื่องดื่ม(2)                         (ฟังกชั่นที่สอง สนองความกระหาย)","คุยเล่นกับฉัน(3)                         (ฉันใช้ if-else เด้อ ไม่ใช่ Ai อย่าหวังเยอะจะดีกว่า)","เปิดโหมบอทขี้เกียจ(4)                    (แน่ใจรึ ว่า จะเล่นอันนี้้)","คำนวณการแชร์บิล(5)                     (ถ้าขี้เกียจคำนวณหารค่าข้าวใช้เราได้นะ)","นับเวลาถอยหลัง(6)                      (ลองก็ได้นะ ตั้งใจทำอยู่)","ออก(0)"};
     string bye = "โอเค แล้วเจอกันใหม่นะ";
 
     string ANS;
@@ -55,6 +55,7 @@ void cho_func2_active()
             case '3': talk_with_me_active();cho_func2_active(); break;
             case '4': Lazy_ai_intro(::name); break;
             case '5':
+                    ShareBill::share_bill();
                     cho_func2_active(); 
                     break;
             case '6':countdown::main_countdown_1();
@@ -202,9 +203,29 @@ void cho_func2_lazy()
             case '4': turn_off_lazy_text(); 
                         active_ai_intro(::name);//(::name); 
                         break;
-            case '6':countdown::main_countdown_1();
-                    cho_func2_active();
-                    break;
+            case '5': if(do_it_or_not)
+                    {
+                        ShareBill::share_bill();
+                        cho_func2_active();
+                        break;
+                    }
+                    else
+                    {
+                        cout << "ขี้เกียจอ่ะ ฉันไปก่อนล่ะ" << endl;
+                        break;
+                    } 
+
+            case '6':if(do_it_or_not)
+                    {
+                        countdown::main_countdown_1();
+                        cho_func2_active();
+                        break;
+                    }
+                    else
+                    {
+                        cout << "ขี้เกียจอ่ะ ฉันไปก่อนล่ะ" << endl;
+                        break;
+                    }
             case '0': 
 
                     for (int i = 0; i<bye.size(); i++)

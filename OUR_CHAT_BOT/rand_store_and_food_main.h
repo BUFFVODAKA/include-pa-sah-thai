@@ -1,4 +1,5 @@
 #include "Randforstore.h"
+#include "rand_all.h"
 
 namespace main_function  
 {
@@ -80,6 +81,7 @@ namespace main_function
                 pass;
                 break;
             case '3':
+                rand_all_main();
                 continue_check();
                 pass;
                 break;

@@ -177,6 +177,18 @@ void UcanRandomMenuInThisStore(){
         case 35:
             fileName = "Ramenya(ราเมนยะ)";
             break;
+        case 36:
+            fileName = "kinkai_fried_chicken";
+            break;
+        case 37:
+            fileName = "ร้านsmell";
+            break;
+        case 38:
+            fileName = "ร้านก๋วยเตี๋ยวต้มยำ";
+            break;
+        case 39:
+            fileName = "ลุงพันธ์";
+            break;
         default :{
             system("cls");
             UcanRandomMenuInThisStore(); //กรณี input ไม่ใช่ตัวเลข

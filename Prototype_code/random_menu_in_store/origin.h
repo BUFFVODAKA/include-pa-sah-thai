@@ -177,7 +177,26 @@ void UcanRandomMenuInThisStore(){
         case 35:
             fileName = "Ramenya(ราเมนยะ)";
             break;
+        case 36:
+            fileName = "kinkai_fried_chicken";
+            break;
+        case 37:
+            fileName = "ร้านsmell";
+            break;
+        case 38:
+            fileName = "ร้านก๋วยเตี๋ยวต้มยำ";
+            break;
+        case 39:
+            fileName = "ลุงพันธ์";
+            break;
+        default :{
+            system("cls");
+            UcanRandomMenuInThisStore(); //กรณี input ไม่ใช่ตัวเลข
+            break;
         }
+
+       
+    }
 
     
     L2.open("Data/Menu_in_store/"+ fileName + ".txt");
@@ -213,7 +232,7 @@ void UcanRandomMenuInThisStore(){
     
     int numofMenuItems = menuItems.size();
     if (numofMenuItems == 0) {
-        cout << "ร้่านนี้ไม่มีเมนู (แล้วเขาเปิดร้านทำไม?)" << endl;
+        cout << "ร้านนี้ไม่มีเมนู (แล้วเขาเปิดร้านทำไม?)" << endl;
         exit(1); // check that store have menu otherwise end.
        
     }

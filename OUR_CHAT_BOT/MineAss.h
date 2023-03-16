@@ -9,6 +9,7 @@
 namespace MineAss{
 
 void UcanRandomMenuInThisStore(){
+    system("cls");
     ifstream L1,L2;
     string fileName;
     string allstore = "Data/Store_list.txt";
@@ -24,7 +25,7 @@ void UcanRandomMenuInThisStore(){
     
     if (!L1.is_open()) { //First check that the file can be open.
         cout << "เอิ่ม อยากจะบอกว่าหาร้าน บ่ เจอ กดใหม่ๆ!" << endl;
-        exit(1); //search มา อยู่ใน <cstdlib>
+        //exit(1); //search มา อยู่ใน <cstdlib>
     }
     
     vector <string> storeItems;
@@ -43,7 +44,7 @@ void UcanRandomMenuInThisStore(){
     int numofStore = storeItems.size(); //จำนวน store ทั้งหมดที่มี
 
     // Get store selection from user
-    int storeSelection;
+    string storeSelection;
     do{
         cout << "❀⊱┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⊰❀" << endl;
         cout << "เลือกระหว่าง (1-" << numofStore << ") หรือ อยากจะสุ่มก็ตามจายย (0)" << endl; 
@@ -66,128 +67,128 @@ void UcanRandomMenuInThisStore(){
     }while(storeSelection < 0 || storeSelection > numofStore); //ถ้าจะใช้ while(-1) สลับเอา check ว่า storeselec in 0<s<i-1
     
     
-    if(storeSelection == 0){
+    if(storeSelection == "0"){
         srand(time(0));
         storeSelection = rand() % numofStore + 1;
         
     }
     
     switch (storeSelection) { //เลือกร้านอาหาร ต้องเรียงตาม store_list
-        case 1: 
+        case '1': 
             fileName = "ข้าวผัดปูเยาวราช";
             break;
-        case 2:
+        case '2':
             fileName = "ข้าวต้มบุษบา";
             break;
-        case 3:
+        case '3':
             fileName = "ก๋วยจั๊บญวน_หลังมอ";
             break;
-        case 4:
+        case '4':
             fileName = "สเต๊กลุงเม่น";
             break;
-        case 5:
+        case '5':
             fileName = "ราชาหมูทอด_เล้งแซ่บ";
-        case 6:
+        case '6':
             fileName = "อาหารตามสั่ง_ByLachada";
             break;
-        case 7:
+        case '7':
             fileName = "ก๋วยเตี๋ยวเป็ดแม่บุญรอด";
             break;
-        case 8:
+        case '8':
             fileName = "ข้าวมันไก่_ต่อประตูเกษตร";
             break;
-        case 9:
+        case '9':
             fileName = "Rice_away";
             break;
-        case 10:
+        case '10':
             fileName = "Hachi";
             break;
-        case 11:
+        case '11':
             fileName = "Katsu_oni";
             break;
-        case 12:
+        case '12':
             fileName = "น้องอ้อย";
             break;
-        case 13:
+        case '13':
             fileName = "กะบับ";
             break;
-        case 14:
+        case '14':
             fileName = "บ้านนม";
             break;
-        case 15:
+        case '15':
             fileName = "ขนมจีนหัวมุม";
             break;
-        case 16:
+        case '16':
             fileName = "เจ๊ศรีกระทะร้อน";
             break;
-        case 17:
+        case '17':
             fileName = "เจ๊หมู";
             break;
-        case 18:
+        case '18':
             fileName = "PP_shabu";
             break;
-        case 19:
+        case '19':
             fileName = "หลงฮัว";
             break;
-        case 20:
+        case '20':
             fileName = "สุกี้ช้างเผือก";
             break;
-        case 21:
+        case '21':
             fileName = "ข้าวมันไก่สีฟ้า";
             break;
-        case 22:
+        case '22':
             fileName = "ธารินทร์";
             break;
-        case 23:
+        case '23':
             fileName = "ชุติภรผัดไทย";
             break;
-        case 24:
+        case '24':
             fileName = "เจ๊ศรีกระทะร้อน";
             break;
-        case 25:
+        case '25':
             fileName = "เจียวดาวหลังมอ2";
             break;
-        case 26:
+        case '26':
             fileName = "เจียวดาวหลังมอเจ้าแรก";
             break;
-        case 27:
+        case '27':
             fileName = "ปูซ่าส์";
             break;
-        case 28:
+        case '28':
             fileName = "ป้าอ้วน";
             break;
-        case 29:
+        case '29':
             fileName = "ก๋วยเตี๋ยวเส้นคลุกโกไข่เจ๊น้อยหลังมอ";
             break;
-        case 30:
+        case '30':
             fileName = "ร้านอาหารยอดฮิต";
             break;
-        case 31:
+        case '31':
             fileName = "บะหมี่พุงระเบิด";
             break;
-        case 32:
+        case '32':
             fileName = "ก๋วยเตี๋ยวต้มยำกุ้งน้ำข้นซุปเปอร์แซ่บ";
             break;
-        case 33:
+        case '33':
             fileName = "The_Steak(เดอะสเต็ก)";
             break;
-        case 34:
+        case '34':
             fileName = "กะเพราเนื้อเนื้อ";
             break;
-        case 35:
+        case '35':
             fileName = "Ramenya(ราเมนยะ)";
             break;
-        case 36:
+        case '36':
             fileName = "kinkai_fried_chicken";
             break;
-        case 37:
+        case '37':
             fileName = "ร้านsmell";
             break;
-        case 38:
+        case '38':
             fileName = "ร้านก๋วยเตี๋ยวต้มยำ";
             break;
-        case 39:
-            fileName = "ลุงพันธ์";
+        case '39':
+            fileName = "ลุงพันธ์หอ6ชาย";
             break;
         default :{
             system("cls");
@@ -233,9 +234,10 @@ void UcanRandomMenuInThisStore(){
     int numofMenuItems = menuItems.size();
     if (numofMenuItems == 0) {
         cout << "ร้านนี้ไม่มีเมนู (แล้วเขาเปิดร้านทำไม?)" << endl;
-        exit(1); // check that store have menu otherwise end.
+        //exit(1); // check that store have menu otherwise end.
        
     }
+    bool done = false;
 
     while (true) {
         cout << endl;
@@ -246,45 +248,54 @@ void UcanRandomMenuInThisStore(){
         cout << "[3]. ออก!" << endl;
         cout << "❀⊱┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⊰❀" << endl;
 
-        int choice;
+        string choice;
         cin >> choice;
         cin.clear();
         fflush(stdin);
         //clear ก่่อนหน้านั้นออก
 
-        switch(choice){
-        case 1: {
-            system("cls");
-            cout << "•—————————————————•°•✿•°——————————————————•" << endl;
-            cout << "เท่าที่เรารู้มาในร้านนี้มีเมนู" << endl;
-            for (int i = 0; i < menuItems.size(); i++) {
-            cout << "- " << menuItems[i] << endl;
+        if(choice.size() > 1) cout << "รู้จักแค่ 1 ถึง 3" << endl;
+        else
+        {
+            char _choice = choice[0];
+            switch(_choice){
+            case '1': {
+                system("cls");
+                cout << "•—————————————————•°•✿•°——————————————————•" << endl;
+                cout << "เท่าที่เรารู้มาในร้านนี้มีเมนู" << endl;
+                for (int i = 0; i < menuItems.size(); i++) {
+                cout << "- " << menuItems[i] << endl;
+                }
+                cout << "•—————————————————•°•✿•°——————————————————•" << endl;
+                break;
             }
-            cout << "•—————————————————•°•✿•°——————————————————•" << endl;
-            break;
+            case '2': {
+                system("cls");
+                srand(time(0)); // seed the random number generator with the current time.
+                int random = rand() % numofMenuItems;
+                string randomMenuItem = menuItems[random]; //menu in vector that add before.
+                cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━❂❂━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
+                cout << setw(50) << left << " แนะนำนะเราว่าควรเลือกเมนู: ";
+                cout << randomMenuItem << endl;
+                cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━❂❂━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl;
+                //exit(1);
+                done = true;
+                break;
+            }
+            case '3': {
+                //exit(1); 
+                done = true;
+                break; //quit.
+            }
+            default: {
+                system("cls");
+                cout << "อย่าดื้อสิบอกว่ามีให้เลือกแค่ (1-3) ไง" << endl;
+                break;
+            }
+            }
         }
-        case 2: {
-            system("cls");
-            srand(time(0)); // seed the random number generator with the current time.
-            int random = rand() % numofMenuItems;
-            string randomMenuItem = menuItems[random]; //menu in vector that add before.
-            cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━❂❂━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
-            cout << setw(50) << left << " แนะนำนะเราว่าควรเลือกเมนู: ";
-            cout << randomMenuItem << endl;
-            cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━❂❂━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl;
-            exit(1);
-            break;
-        }
-        case 3: {
-            exit(1); 
-            break; //quit.
-        }
-        default: {
-            system("cls");
-            cout << "อย่าดื้อสิบอกว่ามีให้เลือกแค่ (1-3) ไง" << endl;
-            break;
-        }
-        }
+
+        if(done) break;
     }
 
 

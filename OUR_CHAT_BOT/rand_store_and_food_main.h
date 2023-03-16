@@ -1,5 +1,6 @@
 #include "Randforstore.h"
 #include "rand_all.h"
+#include "MineAss.h"
 
 namespace main_function  
 {
@@ -71,7 +72,7 @@ namespace main_function
             switch (_ans)
             {
             case '1':
-
+                MineAss::UcanRandomMenuInThisStore();
                 continue_check();
                 pass;
                 break;

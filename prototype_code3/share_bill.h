@@ -1,9 +1,11 @@
 //v.3
-#include <iostream>
-#include <string>
-#include <vector>
-#include <algorithm>
-using namespace std;
+// #include <iostream>
+// #include <string>
+// #include <vector>
+// #include <algorithm>
+// using namespace std;
+
+namespace ShareBill{
 
 struct product {
     string name;
@@ -11,7 +13,7 @@ struct product {
     vector<string> people;
 };
 
-int main() {
+void share_bill() {
     vector<product> productz;
     vector<string> people;
     string input;
@@ -68,4 +70,5 @@ int main() {
     cout << "ขอบคุณที่เข้ามาใช้โปรเเกรมของเรา" << endl;
 
     return 0;
+}
 }

@@ -1,3 +1,5 @@
+#include "Randforstore.h"
+
 namespace main_function  
 {
     #define pass (void)0 //debug
@@ -68,10 +70,12 @@ namespace main_function
             switch (_ans)
             {
             case '1':
+
                 continue_check();
                 pass;
                 break;
             case '2':
+                Rand_Store();
                 continue_check();
                 pass;
                 break;

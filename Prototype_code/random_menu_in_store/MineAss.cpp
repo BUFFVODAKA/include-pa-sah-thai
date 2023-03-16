@@ -49,6 +49,11 @@ void UcanRandomMenuInThisStore(){
         cout << "เลือกระหว่าง (1-" << numofStore << ") หรือ อยากจะสุ่มก็ตามจายย (0)" << endl; 
         cout << "❀⊱┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⊰❀" << endl;
         cin >> storeSelection; //For now cant recieve more than 1 input.
+        
+        cin.clear();
+        fflush(stdin);
+        system("cls");//clear ก่่อนหน้านั้นออก
+        
         if(storeSelection < 0 || storeSelection > numofStore){
         cout << "ก็บอกแล้วไงให้เลือกแค่ (1-" << numofStore << ") หรือไม่ก็สุ่ม (0)" << endl;
         }
@@ -62,7 +67,7 @@ void UcanRandomMenuInThisStore(){
         
     }
     
-    switch (storeSelection) { //ดูท่าจะมีหลาย case
+    switch (storeSelection) { //เลือกร้านอาหาร
         case 1: 
             fileName = "ข้าวผัดปูเยาวราช";
             break;
@@ -86,6 +91,55 @@ void UcanRandomMenuInThisStore(){
         case 8:
             fileName = "ข้าวมันไก่_ต่อประตูเกษตร";
             break;
+        case 9:
+            fileName = "Hachi";
+            break;
+        case 10:
+            fileName = "Katsu_oni";
+            break;
+        case 11:
+            fileName = "PP_shabu";
+            break;
+        case 12:
+            fileName = "Rice_away";
+            break;
+        case 13:
+            fileName = "กะบับ";
+            break;
+        case 14:
+            fileName = "ขนมจีนหัวมุม";
+            break;
+        case 15:
+            fileName = "ข้าวมันไก่สีฟ้า";
+            break;
+        case 16:
+            fileName = "เจ๊ศรีกระทะร้อน";
+            break;
+        case 17:
+            fileName = "เจ๊ศหมู";
+            break;
+        case 18:
+            fileName = "ชุติภรผัดไทย";
+            break;
+        case 19:
+            fileName = "ธารินทร์";
+            break;
+        case 20:
+            fileName = "น้องอ้อย";
+            break;
+        case 21:
+            fileName = "บ้านนม";
+            break;
+        case 22:
+            fileName = "มาร์คซูชิราเมน";
+            break;
+        case 23:
+            fileName = "สุกี้ช้างเผือก";
+            break;
+        case 24:
+            fileName = "หลงฮัว";
+            break;
+
        }
 
     
@@ -138,6 +192,9 @@ void UcanRandomMenuInThisStore(){
 
         int choice;
         cin >> choice;
+        cin.clear();
+        fflush(stdin);
+        system("cls"); //clear ก่่อนหน้านั้นออก
 
         switch(choice){
         case 1: {

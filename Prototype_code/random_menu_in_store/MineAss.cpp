@@ -66,7 +66,7 @@ void UcanRandomMenuInThisStore(){
     }while(storeSelection < 0 || storeSelection > numofStore); //ถ้าจะใช้ while(-1) สลับเอา check ว่า storeselec in 0<s<i-1
     
     
-    if(storeSelection == '0'){
+    if(storeSelection == 0){
         srand(time(0));
         storeSelection = rand() % numofStore + 1;
         

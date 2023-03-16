@@ -55,7 +55,12 @@ void UcanRandomMenuInThisStore(){
         system("cls");//clear ก่่อนหน้านั้นออก
         
         if(storeSelection < 0 || storeSelection > numofStore){
-        cout << "ก็บอกแล้วไงให้เลือกแค่ (1-" << numofStore << ") หรือไม่ก็สุ่ม (0)" << endl;
+            cout << "•—————————————————•°•✿•°——————————————————•" << endl;
+            for(int i = 0; i<numofStore;i++){
+                
+                cout << "[" << i+1 << "]." << " " << storeItems[i] << endl;
+            }
+            cout << "•—————————————————•°•✿•°——————————————————•" << endl;
         }
         
     }while(storeSelection < 0 || storeSelection > numofStore); //ถ้าจะใช้ while(-1) สลับเอา check ว่า storeselec in 0<s<i-1
@@ -141,18 +146,25 @@ void UcanRandomMenuInThisStore(){
             break;
         case 25:
             fileName = "ไข่เจียวดาว";
+            break;
         case 26:
             fileName = "ป้าอ้วน";
+            break;
         case 27:
             fileName = "กะเพราเนื้อเนื้อ";
+            break;
         case 28:
             fileName = "The_Steak";
+            break;
         case 29:
             fileName = "บะหมี่พุงระเบิด";
+            break;
         case 30:
             fileName = "ก๋วยเตี๋ยวต้มยำกุ้งน้ำข้น";
+            break;
         case 31:
             fileName = "ยำขนมจีนเจ๊เมย์";
+            break;
         }
 
     
@@ -174,7 +186,7 @@ void UcanRandomMenuInThisStore(){
                 if(location == "/where"){
                     break;
                 }
-                cout << storeItems[storeSelection-1] << " " << "ร้านนี้อยู่แถวๆ " << location << "มอ" << endl; // [] 0 1 2 เลย -1
+                cout << storeItems[storeSelection-1] << " " << "ร้านนี้อยู่แถวๆ " << location << endl; // [] 0 1 2 เลย -1
             }
             cout << "✦•·················•✦•··················•✦"  << endl;
         }else if (line != "/where") {
@@ -207,10 +219,11 @@ void UcanRandomMenuInThisStore(){
         cin >> choice;
         cin.clear();
         fflush(stdin);
-        system("cls"); //clear ก่่อนหน้านั้นออก
+        //clear ก่่อนหน้านั้นออก
 
         switch(choice){
         case 1: {
+            system("cls");
             cout << "•—————————————————•°•✿•°——————————————————•" << endl;
             cout << "เท่าที่เรารู้มาในร้านนี้มีเมนู" << endl;
             for (int i = 0; i < menuItems.size(); i++) {
@@ -220,13 +233,14 @@ void UcanRandomMenuInThisStore(){
             break;
         }
         case 2: {
+            system("cls");
             srand(time(0)); // seed the random number generator with the current time.
             int random = rand() % numofMenuItems;
             string randomMenuItem = menuItems[random]; //menu in vector that add before.
             cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━❂❂━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
             cout << setw(50) << left << " แนะนำนะเราว่าควรเลือกเมนู";
-            cout << setw(1) << ":";
-            cout << setw(29) << right << randomMenuItem << endl;
+            cout << setw(1) << ": ";
+            cout << setw(70) << right << randomMenuItem << endl;
             cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━❂❂━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl;
             exit(1);
             break;
@@ -236,6 +250,7 @@ void UcanRandomMenuInThisStore(){
             break; //quit.
         }
         default: {
+            system("cls");
             cout << "อย่าดื้อสิบอกว่ามีให้เลือกแค่ (1-3) ไง" << endl;
             break;
         }

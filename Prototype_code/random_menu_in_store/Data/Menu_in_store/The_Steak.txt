@@ -1,0 +1,14 @@
+where
+หลังมอ
+/where
+Beef_Steak
+Pork_Steak
+Fish_Steak
+Chicken_Steak
+Barbecue_Pork_Burger
+Fried_Chicken_Burger
+Cheese_Burger
+Green_Salad
+Tuna_Salad
+Bacon_Salad
+Grilled_Pork/Beef_Salad

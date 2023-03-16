@@ -31,7 +31,7 @@ void UcanRandomMenuInThisStore(){
     string name;
     int i = 1;
     cout << "•—————————————————•°•✿•°——————————————————•" << endl;
-    cout << setw(10) << left << " " << "เลือกร้่านได้เลยไอ้หนุ่ม!! " << endl;
+    cout << setw(10) << left << " " << "เลือกร้านได้เลยไอ้หนุ่ม!! " << endl;
     while(getline(L1,name)){
         cout << "[" << i << "]." << " " << name << endl;
         storeItems.push_back(name); //collect name of store
@@ -139,8 +139,21 @@ void UcanRandomMenuInThisStore(){
         case 24:
             fileName = "เจ๊ศรีกระทะร้อน";
             break;
-
-       }
+        case 25:
+            fileName = "ไข่เจียวดาว";
+        case 26:
+            fileName = "ป้าอ้วน";
+        case 27:
+            fileName = "กะเพราเนื้อเนื้อ";
+        case 28:
+            fileName = "The_Steak";
+        case 29:
+            fileName = "บะหมี่พุงระเบิด";
+        case 30:
+            fileName = "ก๋วยเตี๋ยวต้มยำกุ้งน้ำข้น";
+        case 31:
+            fileName = "ยำขนมจีนเจ๊เมย์";
+        }
 
     
     L2.open("Data/Menu_in_store/"+ fileName + ".txt");
@@ -161,7 +174,7 @@ void UcanRandomMenuInThisStore(){
                 if(location == "/where"){
                     break;
                 }
-                cout << storeItems[storeSelection-1] << " " << "ร้่านนี้อยู่แถวๆ " << location << "มอ" << endl; // [] 0 1 2 เลย -1
+                cout << storeItems[storeSelection-1] << " " << "ร้านนี้อยู่แถวๆ " << location << "มอ" << endl; // [] 0 1 2 เลย -1
             }
             cout << "✦•·················•✦•··················•✦"  << endl;
         }else if (line != "/where") {
@@ -199,7 +212,7 @@ void UcanRandomMenuInThisStore(){
         switch(choice){
         case 1: {
             cout << "•—————————————————•°•✿•°——————————————————•" << endl;
-            cout << "เท่าที่เรารู้มาในร้่่านนี้มีเมนู" << endl;
+            cout << "เท่าที่เรารู้มาในร้านนี้มีเมนู" << endl;
             for (int i = 0; i < menuItems.size(); i++) {
             cout << "- " << menuItems[i] << endl;
             }

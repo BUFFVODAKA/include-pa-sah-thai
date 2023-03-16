@@ -159,32 +159,6 @@ int main()
     string menu_need;
     menu_need = menu_list[menu_select-1];
 
-    /*switch (menu_select) { //ดูท่าจะมีหลาย case
-        case 1: 
-            menu_need = "MenuA";
-            break;
-        case 2:
-            menu_need = "MenuB";
-            break;
-        case 3:
-            menu_need = "MenuC";
-            break;
-        case 4:
-            menu_need = "MenuD";
-            break;
-        case 5:
-            menu_need = "MenuE";
-            break;
-        case 6:
-            menu_need = "MenuF";
-            break;
-        case 7:
-            menu_need = "MenuG";
-            break;
-       }*/
-
-
-
     
     cout << endl << "**---------------------------**" << endl;
     cout << "\nฉันแนะนำให้รับประทานเมนู " << menu_need << " ที่ร้าน\n" << endl;
@@ -208,15 +182,3 @@ int main()
 }
 
 
-/*for(unsigned int i=0; i<allstore.size(); i++)
-    {
-        for(unsigned int j=0; j<allstore[i].menu.size(); j++)
-        {
-            if(allstore[i].menu[j] == menu_i)
-            {
-                cout << "\nA";
-                c++;
-            }
-        }
-        if(c==0 && i+1==allstore.size()) cout << "\nSorry, we can't find your store";
-    }*/

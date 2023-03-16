@@ -28,25 +28,6 @@ ifstream RF2;
         void recrive_key(string k);
     };
 
-/*template <typename T>
-bool check_int(T a)
-{
-    int b;
-    bool c;
-    if(typeid(a).name() == typeid(b).name())
-    {
-        c = true;
-    }
-    else
-    {
-        c = false;
-    }
-
-    return c;
-
-}*/
-
-
 
 Store::Store(string storename)
 {

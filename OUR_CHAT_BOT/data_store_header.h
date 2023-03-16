@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
@@ -7,19 +7,19 @@
 #include <ctime>
 #include <conio.h>
 
-using namespace std;
+using namespace std;*/
 
-ifstream RF1,RF2;
+ifstream RF1_1,RF2_2;
 
-class Store
+class Store_3
 {
     vector <string> menu;
-    string store_name,where;
+    string store_3_name,where;
     string text;
     bool set_where = false, noname = true;
     
     public:
-    Store(string);
+    Store_3(string);
 
     void show_data(); //สำหรับ debug
     bool check_menu(string input);
@@ -32,13 +32,13 @@ class Store
 
 };
 
-Store::Store(string storename)
+Store_3::Store_3(string store_3name)
 {
     //cout << "created class" << endl; //debug
-    store_name = storename;
-    string filename = "Data//Menu_in_store//" + storename +".txt";
-    RF2.open(filename);
-    while(getline(RF2, text))
+    store_3_name = store_3name;
+    string filename = "Data//Menu_in_store//" + store_3name +".txt";
+    RF2_2.open(filename);
+    while(getline(RF2_2, text))
     {
         //cout << text << endl; //debug
         if(text == "where")
@@ -59,17 +59,17 @@ Store::Store(string storename)
         menu.push_back(text);
 
     }
-    RF2.close();
+    RF2_2.close();
 }
 
-void Store::show_data() //สำหรับ debug
+void Store_3::show_data() //สำหรับ debug
 {
-    cout << "store " << store_name << " at " << where << endl << "menu\n";
+    cout << "store_3 " << store_3_name << " at " << where << endl << "menu\n";
     for(string i: menu) cout << i << endl;
     cout << endl;
 }
 
-bool Store::check_menu(string input)
+bool Store_3::check_menu(string input)
 {
     bool a;
     for(string i: menu)
@@ -82,35 +82,35 @@ bool Store::check_menu(string input)
     return a;
 }
 
-int Store::acess_menu_size() //คิดว่าน่าจะเอาไปใช้ประกอบการสุ่ม
+int Store_3::acess_menu_size() //คิดว่าน่าจะเอาไปใช้ประกอบการสุ่ม
 {
     return menu.size();
 }
 
-string Store::assecc_menu(int index) //เอาไว้ดึงค่าตอนสุ่ม
+string Store_3::assecc_menu(int index) //เอาไว้ดึงค่าตอนสุ่ม
 {
     return menu[index];
 }
 
-string Store::show_name()
+string Store_3::show_name()
 {
-    return store_name;
+    return store_3_name;
 }
 
-string Store::show_where()
+string Store_3::show_where()
 {
     return where;
 }
 
-void Store::show_menu()
+void Store_3::show_menu()
 {
     for(string i: menu) cout << i << endl;
     cout << endl;
 }
 
-void Store::name_and_location()
+void Store_3::name_and_location()
 {
-    cout << "ร้าน " << store_name << " อยู่ที่ " << where << endl;
+    cout << "ร้าน " << store_3_name << " อยู่ที่ " << where << endl;
 }
 
 

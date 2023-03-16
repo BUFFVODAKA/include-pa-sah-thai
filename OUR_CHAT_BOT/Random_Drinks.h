@@ -28,7 +28,7 @@ namespace random_drink
         string FileNames = "Drinks_List.txt";
         vector<string> DrinksLists;
         GetDrinkList(DrinksLists,FileNames);
-        int Choice;
+        string Choice;
         int ListSize = DrinksLists.size();
         int RNG;
         srand(time(0));
@@ -39,17 +39,17 @@ namespace random_drink
             cin >> Choice;
             cin.clear();
             fflush(stdin);
-            if(Choice == 0){
+            if(Choice == "0"){
                 system("cls");
                 my_command::cout_string_dalay(say[2]);
                 break;
-            }else if(Choice == 1){
+            }else if(Choice == "1"){
                 system("cls");
                 for(int i = 0; i < DrinksLists.size(); i++){
                     cout << "(" << i+1 << ")" << DrinksLists[i] << "\n";
                 }
                 cout << endl;
-            }else if(Choice == 2){
+            }else if(Choice == "2"){
                 system("cls");
                 RNG = rand()%ListSize;
                 //cout << RNG; **debug มาคับ
@@ -59,6 +59,6 @@ namespace random_drink
                 system("cls");
                 cout << "ใส่เลขผิดนะจ๊ะ" << "\n";
             }
-        }while(Choice != 0);
+        }while(Choice != "0");
     }
 }

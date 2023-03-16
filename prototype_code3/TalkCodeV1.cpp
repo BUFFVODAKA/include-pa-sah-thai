@@ -52,6 +52,7 @@ void main_talk_bot(string name)
             fflush(stdin);
             //system("cls");
             if(Choice2 == "1"){
+                system("cls");
                 cout << "------------------------------------\n";
                 cout << "มีอะไรจะถามเหรอจ๊ะนายจ๊า\n";
                 cin >> Choice3;
@@ -64,7 +65,9 @@ void main_talk_bot(string name)
                 cout << "ได้" << endl;
                 cout << "------------------------------------\n";
             }
-            }
+            }else{
+            cout << "ใส่เลขผิดนะจ๊ะ" << "\n------------------------------------\n";
+        }
 
             }while(Choice2 !="0");
 
@@ -79,3 +82,4 @@ void main_talk_bot(string name)
 int main(){
     main_talk_bot("Abdul");
 }
+

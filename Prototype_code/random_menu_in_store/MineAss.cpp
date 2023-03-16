@@ -177,7 +177,14 @@ void UcanRandomMenuInThisStore(){
         case 35:
             fileName = "Ramenya(ราเมนยะ)";
             break;
+        default :{
+            system("cls");
+            UcanRandomMenuInThisStore(); //กรณี input ไม่ใช่ตัวเลข
+            break;
         }
+
+       
+    }
 
     
     L2.open("Data/Menu_in_store/"+ fileName + ".txt");
@@ -213,7 +220,7 @@ void UcanRandomMenuInThisStore(){
     
     int numofMenuItems = menuItems.size();
     if (numofMenuItems == 0) {
-        cout << "ร้่านนี้ไม่มีเมนู (แล้วเขาเปิดร้านทำไม?)" << endl;
+        cout << "ร้านนี้ไม่มีเมนู (แล้วเขาเปิดร้านทำไม?)" << endl;
         exit(1); // check that store have menu otherwise end.
        
     }

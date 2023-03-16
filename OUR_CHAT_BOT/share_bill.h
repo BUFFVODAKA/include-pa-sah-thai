@@ -14,6 +14,7 @@ struct product {
 };
 
 void share_bill() {
+    system("cls");
     vector<product> productz;
     vector<string> people;
     string input;
@@ -56,6 +57,7 @@ void share_bill() {
     }
 
     // 3. คำนวณราคาของแต่ละคนที่ต้องจ่าย
+    system("cls");
     double total_product_price = 0;
     for (string person : people) {
         double total_price = 0;
@@ -67,8 +69,8 @@ void share_bill() {
         }
         cout << person << " มียอดชำระ " << total_price << " บาท" << endl;
     }
-    cout << "ราคารวมทั้งสิ้นของสินค้าทั้งหมด: " << total_product_price << " บาท" << endl;
-    cout << "ขอบคุณที่เข้ามาใช้โปรเเกรมของเรา" << endl;
+    cout << "ราคารวมทั้งสิ้นของสินค้าทั้งหมด: " << total_product_price << " บาท\n" << endl;
+    cout << "ขอบคุณที่เข้ามาใช้โปรเเกรมของเรา\n" << endl;
 
     
 }

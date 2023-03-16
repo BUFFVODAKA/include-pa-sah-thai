@@ -44,13 +44,18 @@ void UcanRandomMenuInThisStore(){
     int numofStore = storeItems.size(); //จำนวน store ทั้งหมดที่มี
 
     // Get store selection from user
-    string storeSelection;
+    int storeSelection;
     do{
-        cout << "❀⊱┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⊰❀" << endl;
-        cout << "เลือกระหว่าง (1-" << numofStore << ") หรือ อยากจะสุ่มก็ตามจายย (0)" << endl; 
-        cout << "❀⊱┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⊰❀" << endl;
+        cout << "❀⊱┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⊰❀" << endl;
+        cout << "เลือกระหว่าง (1-" << numofStore << ") หรือ อยากจะสุ่มก็ตามจายย (0) แต่ถ้าใส่อักษรเราสุ่มนะ เตือนแล้ว" << endl; 
+        cout << "❀⊱┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⊰❀" << endl;
         cin >> storeSelection; //For now cant recieve more than 1 input.
+        if (cin.fail())
+        {
+            storeSelection = 0;
+        }
         
+       
         cin.clear();
         fflush(stdin);
         system("cls");//clear ก่่อนหน้านั้นออก
@@ -65,140 +70,93 @@ void UcanRandomMenuInThisStore(){
         }
         
     }while(storeSelection < 0 || storeSelection > numofStore); //ถ้าจะใช้ while(-1) สลับเอา check ว่า storeselec in 0<s<i-1
-    
-    
-    if(storeSelection == "0"){
+    if(storeSelection == 0){
         srand(time(0));
         storeSelection = rand() % numofStore + 1;
-        
     }
     
-    switch (storeSelection) { //เลือกร้านอาหาร ต้องเรียงตาม store_list
-        case '1': 
-            fileName = "ข้าวผัดปูเยาวราช";
-            break;
-        case '2':
-            fileName = "ข้าวต้มบุษบา";
-            break;
-        case '3':
-            fileName = "ก๋วยจั๊บญวน_หลังมอ";
-            break;
-        case '4':
-            fileName = "สเต๊กลุงเม่น";
-            break;
-        case '5':
-            fileName = "ราชาหมูทอด_เล้งแซ่บ";
-        case '6':
-            fileName = "อาหารตามสั่ง_ByLachada";
-            break;
-        case '7':
-            fileName = "ก๋วยเตี๋ยวเป็ดแม่บุญรอด";
-            break;
-        case '8':
-            fileName = "ข้าวมันไก่_ต่อประตูเกษตร";
-            break;
-        case '9':
-            fileName = "Rice_away";
-            break;
-        case '10':
-            fileName = "Hachi";
-            break;
-        case '11':
-            fileName = "Katsu_oni";
-            break;
-        case '12':
-            fileName = "น้องอ้อย";
-            break;
-        case '13':
-            fileName = "กะบับ";
-            break;
-        case '14':
-            fileName = "บ้านนม";
-            break;
-        case '15':
-            fileName = "ขนมจีนหัวมุม";
-            break;
-        case '16':
-            fileName = "เจ๊ศรีกระทะร้อน";
-            break;
-        case '17':
-            fileName = "เจ๊หมู";
-            break;
-        case '18':
-            fileName = "PP_shabu";
-            break;
-        case '19':
-            fileName = "หลงฮัว";
-            break;
-        case '20':
-            fileName = "สุกี้ช้างเผือก";
-            break;
-        case '21':
-            fileName = "ข้าวมันไก่สีฟ้า";
-            break;
-        case '22':
-            fileName = "ธารินทร์";
-            break;
-        case '23':
-            fileName = "ชุติภรผัดไทย";
-            break;
-        case '24':
-            fileName = "เจ๊ศรีกระทะร้อน";
-            break;
-        case '25':
-            fileName = "เจียวดาวหลังมอ2";
-            break;
-        case '26':
-            fileName = "เจียวดาวหลังมอเจ้าแรก";
-            break;
-        case '27':
-            fileName = "ปูซ่าส์";
-            break;
-        case '28':
-            fileName = "ป้าอ้วน";
-            break;
-        case '29':
-            fileName = "ก๋วยเตี๋ยวเส้นคลุกโกไข่เจ๊น้อยหลังมอ";
-            break;
-        case '30':
-            fileName = "ร้านอาหารยอดฮิต";
-            break;
-        case '31':
-            fileName = "บะหมี่พุงระเบิด";
-            break;
-        case '32':
-            fileName = "ก๋วยเตี๋ยวต้มยำกุ้งน้ำข้นซุปเปอร์แซ่บ";
-            break;
-        case '33':
-            fileName = "The_Steak(เดอะสเต็ก)";
-            break;
-        case '34':
-            fileName = "กะเพราเนื้อเนื้อ";
-            break;
-        case '35':
-            fileName = "Ramenya(ราเมนยะ)";
-            break;
-        case '36':
-            fileName = "kinkai_fried_chicken";
-            break;
-        case '37':
-            fileName = "ร้านsmell";
-            break;
-        case '38':
-            fileName = "ร้านก๋วยเตี๋ยวต้มยำ";
-            break;
-        case '39':
-            fileName = "ลุงพันธ์หอ6ชาย";
-            break;
-        default :{
-            system("cls");
-            UcanRandomMenuInThisStore(); //กรณี input ไม่ใช่ตัวเลข
-            break;
-        }
-
-       
-    }
-
+    /*if(storeSelection == "0")
+        srand(time(0));
+        storeSelection = rand() % numofStore + 1;
+    else if(storeSelection == "1") 
+        fileName = "ข้าวผัดปูเยาวราช";
+    else if(storeSelection == "2")
+        fileName = "ข้าวต้มบุษบา";
+    else if(storeSelection == "3")
+        fileName = "ก๋วยจั๊บญวน_หลังมอ";
+    else if(storeSelection == "4")
+        fileName = "สเต๊กลุงเม่น";
+    else if(storeSelection == "5")
+        fileName = "ราชาหมูทอด_เล้งแซ่บ";
+    else if(storeSelection == "6")
+        fileName = "อาหารตามสั่ง_ByLachada";
+    else if(storeSelection == "7")
+        fileName = "ก๋วยเตี๋ยวเป็ดแม่บุญรอด";
+    else if(storeSelection == "8")
+        fileName = "ข้าวมันไก่_ต่อประตูเกษตร";
+    else if(storeSelection == "9")
+        fileName = "Rice_away";
+    else if(storeSelection == "10")
+        fileName = "Hachi";
+    else if(storeSelection == "11")
+        fileName = "Katsu_oni";
+    else if(storeSelection == "12")
+        fileName = "น้องอ้อย";
+    else if(storeSelection == "13")
+        fileName = "กะบับ";
+    else if(storeSelection == "14")
+        fileName = "บ้านนม";
+    else if(storeSelection == "15")
+        fileName = "ขนมจีนหัวมุม";
+    else if(storeSelection == "16")
+        fileName = "เจ๊ศรีกระทะร้อน";
+    else if(storeSelection == "17")
+        fileName = "เจ๊หมู";
+    else if(storeSelection == "18")
+        fileName = "PP_shabu";
+    else if(storeSelection == "19")
+        fileName = "หลงฮัว";
+    else if(storeSelection == "20")
+        fileName = "สุกี้ช้างเผือก";
+    else if(storeSelection == "21")
+        fileName = "ข้าวมันไก่สีฟ้า";
+    else if(storeSelection == "22")
+        fileName = "ธารินทร์";
+    else if(storeSelection == "23")
+        fileName = "ชุติภรผัดไทย";
+    else if(storeSelection == "24")
+        fileName = "เจ๊ศรีกระทะร้อน";
+    else if(storeSelection == "25")
+        fileName = "เจียวดาวหลังมอ2";
+    else if(storeSelection == "26")
+        fileName = "เจียวดาวหลังมอเจ้าแรก";
+    else if(storeSelection == "27")
+        fileName = "ปูซ่าส์";
+    else if(storeSelection == "28")
+        fileName = "ป้าอ้วน";
+    else if(storeSelection == "29")
+        fileName = "ก๋วยเตี๋ยวเส้นคลุกโกไข่เจ๊น้อยหลังมอ";
+    else if(storeSelection == "30")
+        fileName = "ร้านอาหารยอดฮิต";
+    else if(storeSelection == "31")
+        fileName = "บะหมี่พุงระเบิด";
+    else if(storeSelection == "32")
+        fileName = "ก๋วยเตี๋ยวต้มยำกุ้งน้ำข้นซุปเปอร์แซ่บ";
+    else if(storeSelection == "33")
+        fileName = "The_Steak(เดอะสเต็ก)";
+    else if(storeSelection == "34")
+        fileName = "กะเพราเนื้อเนื้อ";
+    else if(storeSelection == "35")
+        fileName = "Ramenya(ราเมนยะ)";
+    else if(storeSelection == "36")
+        fileName = "kinkai_fried_chicken";
+    else if(storeSelection == "37")
+        fileName = "ร้านsmell";
+    else if(storeSelection == "38")
+        fileName = "ร้านก๋วยเตี๋ยวต้มยำ";
+    else if(storeSelection == "39")
+        fileName = "ลุงพันธ์หอ6ชาย";*/
+    fileName = storeItems[storeSelection-1];
     
     L2.open("Data/Menu_in_store/"+ fileName + ".txt");
 

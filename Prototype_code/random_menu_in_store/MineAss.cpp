@@ -67,7 +67,7 @@ void UcanRandomMenuInThisStore(){
         
     }
     
-    switch (storeSelection) { //เลือกร้านอาหาร
+    switch (storeSelection) { //เลือกร้านอาหาร ต้องเรียงตาม store_list
         case 1: 
             fileName = "ข้าวผัดปูเยาวราช";
             break;
@@ -92,52 +92,52 @@ void UcanRandomMenuInThisStore(){
             fileName = "ข้าวมันไก่_ต่อประตูเกษตร";
             break;
         case 9:
-            fileName = "Hachi";
+            fileName = "Rice_away";
             break;
         case 10:
-            fileName = "Katsu_oni";
+            fileName = "Hachi";
             break;
         case 11:
-            fileName = "PP_shabu";
+            fileName = "Katsu_oni";
             break;
         case 12:
-            fileName = "Rice_away";
+            fileName = "น้องอ้อย";
             break;
         case 13:
             fileName = "กะบับ";
             break;
         case 14:
-            fileName = "ขนมจีนหัวมุม";
+            fileName = "บ้านนม";
             break;
         case 15:
-            fileName = "ข้าวมันไก่สีฟ้า";
+            fileName = "ขนมจีนหัวมุม";
             break;
         case 16:
             fileName = "เจ๊ศรีกระทะร้อน";
             break;
         case 17:
-            fileName = "เจ๊ศหมู";
+            fileName = "เจ๊หมู";
             break;
         case 18:
-            fileName = "ชุติภรผัดไทย";
+            fileName = "PP_shabu";
             break;
         case 19:
-            fileName = "ธารินทร์";
+            fileName = "หลงฮัว";
             break;
         case 20:
-            fileName = "น้องอ้อย";
-            break;
-        case 21:
-            fileName = "บ้านนม";
-            break;
-        case 22:
-            fileName = "มาร์คซูชิราเมน";
-            break;
-        case 23:
             fileName = "สุกี้ช้างเผือก";
             break;
+        case 21:
+            fileName = "ข้าวมันไก่สีฟ้า";
+            break;
+        case 22:
+            fileName = "ธารินทร์";
+            break;
+        case 23:
+            fileName = "ชุติภรผัดไทย";
+            break;
         case 24:
-            fileName = "หลงฮัว";
+            fileName = "เจ๊ศรีกระทะร้อน";
             break;
 
        }
@@ -145,7 +145,7 @@ void UcanRandomMenuInThisStore(){
     
     L2.open("Data/Menu_in_store/"+ fileName + ".txt");
 
-    if (!L2.is_open()) { //First check that the file can be open.
+    if (!L2.is_open()) { //check ว่า file ร้านนั้นเปิดได้ไหม
         cout << "เราหาร้านไม่เจอง่ะ! (ลองเลือกใหม่ๆ)" << endl;
         exit(0); //search มา อยู่ใน <cstdlib> or exit(1) not sure
     }

@@ -1,8 +1,8 @@
-#include<iostream>
-#include<string>
-#include<vector>
-using namespace std;
-
+// #include<iostream>
+// #include<string>
+// #include<vector>
+// using namespace std;
+namespace talk_bot{
 void main_talk_bot(string name)
 {
     string Choice;
@@ -76,7 +76,7 @@ void main_talk_bot(string name)
         }
     }while(Choice != "0");
 
-
+}
 }
 
 

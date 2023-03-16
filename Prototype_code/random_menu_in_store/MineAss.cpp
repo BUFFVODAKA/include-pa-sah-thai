@@ -11,7 +11,7 @@ using namespace std;
 void UcanRandomMenuInThisStore(){
     ifstream L1,L2;
     string fileName;
-    string allstore = "Menu_in_store/Store_list.txt";
+    string allstore = "Data/Menu_in_store/Store_list.txt";
     
     cout << "❀⊱┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄⊰❀" << endl;
     cout << endl;
@@ -64,14 +64,22 @@ void UcanRandomMenuInThisStore(){
     
     switch (storeSelection) { //ดูท่าจะมีหลาย case
         case 1: 
-            fileName = "StoreA";
+            fileName = "ข้าวผัดปูเยาวราช";
             break;
         case 2:
-            fileName = "StoreB";
+            fileName = "ข้าวต้มบุษบา";
             break;
         case 3:
-            fileName = "StoreC";
+            fileName = "ก๋วยจั๊บญวน_หลังมอ";
             break;
+        case 4:
+            fileName = "สเต๊กลุงเม่น";
+        case 5:
+            fileName = "อาหารตามสั่ง_ByLachada";
+        case 6:
+            fileName = "ก๋วยเตี๋ยวเป็ดแม่บุญรอด";
+        case 7:
+            fileName = "ข้าวมันไก่_ต่อประตูเกษตร";
        }
 
     

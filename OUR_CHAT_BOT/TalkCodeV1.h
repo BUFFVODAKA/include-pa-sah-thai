@@ -5,12 +5,12 @@
 namespace talk_bot{
 void main_talk_bot(string name)
 {
-    string Choice;
+   string Choice;
     string Choice2;
     string Choice3;
     int ListSize ;
     vector<string> Ans1 = {"ร้อนๆหนาวๆอะ","ลองมองไปที่ท้องฟ้าสิ","น่านอนมาก","ออกไปดูเองได้เลยจ้า ไปแตะหญ้าบ้างนะ"};
-    vector<string> Ans2 = {"botชื่อว่า........ลืมไปละ","เราถูกสร้างมาเพื่อช่วยเหลือพวกที่ไม่รู้ว่าจะกินอะไร","botอยากนอน","ดูหนัง","ดูการ์ตูน","กินข้าว"};
+    vector<string> Ans2 = {"botชื่อว่า........ลืมไปละ","เราถูกสร้างมาเพื่อช่วยเหลือพวกที่ไม่รู้ว่าจะกินอะไร","botอยากนอน","อยากดูหนัง","อยากดูการ์ตูน","อยากกินข้าว","อยากออกไปแตะขอบฟ้า"};
     srand(time(0));
     do{
         cout << "โปรดเลือกทางเลือกของท่าน\n (0)เลิกถามและพากลับไปหน้าแรก\n (1)อากาศวันนี้\n (2)ถามเกี่ยวกับbot\n (3)Modeตอบได้ทุกคำถาม\n";
@@ -36,7 +36,7 @@ void main_talk_bot(string name)
             }else if(Choice2 == "2"){
                 cout << Ans2[1] << endl;
             }else if(Choice2 == "3"){
-                cout << Ans2[rand()%4+2] << endl;
+                cout << Ans2[rand()%5+2] << endl;
             }else{
             cout << "ใส่เลขผิดนะจ๊ะ" << "\n\n";
         }

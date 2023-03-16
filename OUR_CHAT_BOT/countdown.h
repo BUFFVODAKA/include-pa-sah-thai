@@ -1,4 +1,4 @@
-namespace coutdown
+namespace countdown
 {
     using namespace std;
 

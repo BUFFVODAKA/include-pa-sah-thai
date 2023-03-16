@@ -23,7 +23,7 @@ void Nono(string &name)
 void give_name(string &name)
 {
     string say = "คุณต้องการตั้งชื่อให้ chat bot ของเราหรือไม่ (y/n)";
-    vector <string> _say = {"ชื่อ Chat bot นี้ถูกตั้งเป็นค่าเริ่มต้น ("+name+") เรียบร้อยแล้ว","กรุณาใส่ชื่อที่คุณต้องการ (ถ้าไม่ใส่อะไรเลยชื่อจะกลายเป็นชื่อเริ่มต้น (" +name+") และ Enter เฉยๆ ก็ถือว่าใส่ชื่อแล้วนะ)"};
+    vector <string> _say = {"ชื่อ Chat bot นี้ถูกตั้งเป็นค่าเริ่มต้น ("+name+") เรียบร้อยแล้ว","กรุณาใส่ชื่อที่คุณต้องการ (ถ้าไม่ใส่อะไรเลยชื่อจะกลายเป็นชื่อเริ่มต้น (" +name+") และ Enter เฉยๆ ก็ถือว่าใส่ชื่อแล้วนะ)","ถ้าเป็นภาษาไทยหรือภาษาอื่นมัน cin ไม่ได้นะ"};
     my_command::cout_string_dalay(say);
 
     bool flag = false;
@@ -73,7 +73,7 @@ int main()
 {
     srand(time(0));
     system("cls");
-    string name = "AI จีบีที่"; // เปลี่ยนชื่อได้นะ
+    string name = "อับดุล"; // เปลี่ยนชื่อได้นะ
 
     give_name(name);
     system("cls");

@@ -98,7 +98,7 @@ int main()
     RF1.open(filename1);
     
     if (!RF1.is_open()) { 
-        cout << "เปิดไฟล์ไม่สำเร็จนะคะ" << endl;
+        cout << "\nเปิดไฟล์ไม่สำเร็จนะคะ\n" << endl;
         exit(1); 
     }else{
         string name;
@@ -135,6 +135,7 @@ int main()
         if(cin.fail()) {
             cin.clear();
             cin.ignore();
+            cout << "\n**---------------------------**" << endl;
             cout << "\nตัวเลือกไม่ถูกต้องนะเจ้าคะ!! ดังนั้นดิฉันขออนุญาตถือว่าเจ้านายจ้องการสุ่มอาหารนะเจ้าคะ\n";
             menu_select = 0;
         }
@@ -186,7 +187,7 @@ int main()
 
     
     cout << endl << "**---------------------------**" << endl;
-    cout << "\nฉันแนะนำให้รับประทานเมนู " << menu_need << " ที่ร้าน " << endl;
+    cout << "\nฉันแนะนำให้รับประทานเมนู " << menu_need << " ที่ร้าน\n" << endl;
     
     for(unsigned int i=0; i<allstore.size(); i++)
     {
@@ -194,7 +195,7 @@ int main()
         {
             if(allstore[i].menu[j] == menu_need){
                 
-                cout << allstore[i].store_name << " บริเวณ " << allstore[i].where;
+                cout << allstore[i].store_name << " ที่ " << allstore[i].where << endl;
                 
             }
         }

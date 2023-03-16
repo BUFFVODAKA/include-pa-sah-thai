@@ -2,6 +2,7 @@
 //#include "shutdown_function.h" //ไม่ใช้แล้ว
 #include "Random_Drinks.h"
 #include "rand_store_and_food_main.h"
+#include "TalkCodeV1.h" //talk_bot
 
 string name;
 
@@ -10,7 +11,11 @@ void Lazy_ai_intro(string name);
 
 void talk_with_me_active()
 {
-    cout << "Enter talk_with_me (AI working line 9 and 100)ตอนนี้ยังไม่ได้ทำ" << endl; //เดี๋ยวค่อยทำ
+    system("cls");
+    string say = "โอเค ว่าแต่ มีอะไรอย่างนั้นหรอ\n";
+    my_command::cout_string_dalay(say);
+
+    talk_bot::main_talk_bot(name);
 }
 
 void cho_func2_active()
@@ -43,7 +48,6 @@ void cho_func2_active()
                     cho_func2_active(); 
                     break; 
             case '2': //coutdown_to_shutdown:: main_countdown_1(); 
-                        //cout << "โค้ดนี้เอาออกไปแล้ว (43 และ 167)" << endl;
                         random_drink::main_random_drink();
                         cho_func2_active(); break;
             case '3': talk_with_me_active();cho_func2_active(); break;
@@ -99,7 +103,7 @@ bool do_it_or_not()
 {
     srand(time(0));
     int rand_num = (rand()%100)+1;
-    cout << rand_num << " (ดูเลขที่สุมมา)" << endl; //debug
+    //cout << rand_num << " (ดูเลขที่สุมมา)" << endl; //debug
 
     if(rand_num > 40)
     {
@@ -111,11 +115,15 @@ bool do_it_or_not()
 
 void talk_with_me_lazy(bool do_check)
 {
+    system("cls");
+    //do_check = true; //debug
     if(do_check)
     {
         string say = "อะอะอะ มีอะไรล่ะ ว่ามาเลย";
+        Sleep(1000);
         my_command::cout_string_dalay(say);
-        cout << "Enter talk_with_me (AI working line 9 and 100)ตอนนี้ยังไม่ได้ทำ" << endl; //เดี๋ยวค่อยทำ
+        talk_bot::main_talk_bot(name);
+
         cho_func2_lazy();
     }
     else cout << "ขี้เกียจแล้วอ่ะ ไว้คุยกันวันหลังนะ ไปละ บ้ายบาย\n";

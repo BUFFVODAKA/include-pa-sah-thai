@@ -46,7 +46,7 @@ namespace main_function
 
     void choice()
     {
-        vector <string> command_list = {"------------------------------------","สุ่มอาหารที่มีในร้าน(1)\nสุ่มร้านจากอาหาร(2)\nสุ่มทั้งคู๋(3)\nพอละ ไม่ต้องสุ่มละ(4)"};
+        vector <string> command_list = {"------------------------------------","เลือกร้าน สุ่มเมนู(1)\nเลือกเมนูสุ่มร้าน(2)\nreal กินอะไรก็ได้(3)\nพอละ ไม่ต้องสุ่มละ(0)"};
 
         my_command::showcommand_and_line(command_list);
 
@@ -58,7 +58,7 @@ namespace main_function
         if(ans.size() > 1)
         {
             system("cls");
-            cout << "ฉันเข้าใจแต่ 0-2 อ่ะ อย่าแกล้งกันได้ไหม\n";
+            cout << "ฉันเข้าใจแต่ 0-3 อ่ะ อย่าแกล้งกันได้ไหม\n";
             choice();
         }
         else 

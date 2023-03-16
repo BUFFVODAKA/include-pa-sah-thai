@@ -29,7 +29,7 @@ ifstream RF2;
 Store::Store(string storename)
 {
     store_name = storename;
-    string filename = "data_store_menu/menu/Menu_in_store/" + storename +".txt";
+    string filename = "Data//Menu_in_store//" + storename +".txt";
     RF2.open(filename);
     while(getline(RF2, text))
     {
@@ -66,7 +66,7 @@ void Rand_Store()
     vector<Store> allstore;
     vector<string> menu_list;
 
-    string filename1 = "data_store_menu/store_list.txt";
+    string filename1 = "Data//Store_list.txt";
     
     cout << "**---------------------------**" << endl;
     cout << "\nสวัสดีเจ้าคะ ดิฉันยินดีที่ได้รับใช้นายท่านนะเจ้าคะ" << endl;           

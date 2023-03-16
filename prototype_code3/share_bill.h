@@ -17,6 +17,7 @@ void share_bill() {
     vector<product> productz;
     vector<string> people;
     string input;
+    cout << "กรุณใส่เป็นภาษาอังกฤษเพื่อความเสถียรของของโปรเเกรม" << endl ;
 
     // 1. ให้ผู้ใช้ใส่รายชื่อคนที่หารค่าอาหาร เมื่อใส่ครบให้พิมพ์1
     while (true) {

@@ -32,7 +32,7 @@ ifstream RF2;
 Store::Store(string storename)
 {
     store_name = storename;
-    string filename = "data_store_menu/menu/" + storename +".txt";
+    string filename = "data_store_menu/menu/Menu_in_store/" + storename +".txt";
     RF2.open(filename);
     while(getline(RF2, text))
     {
@@ -60,19 +60,22 @@ Store::Store(string storename)
 
 int main()
 {
+    system("cls");
     ifstream RF1;
     vector<Store> allstore;
+    vector<string> menu_list;
+
     string filename1 = "data_store_menu/store_list.txt";
     
     cout << "**---------------------------**" << endl;
-    cout << "\nHello!! Welcome to chat-bot assitant" << endl;           
+    cout << "\nสวัสดีเจ้าคะ ยินดีที่ได้รับใช้นายท่านนะเจ้าคะ" << endl;           
     cout << "\n**---------------------------**" << endl;
    
     
     RF1.open(filename1);
     
     if (!RF1.is_open()) { 
-        cout << "Failed to open file!" << endl;
+        cout << "เปิดไฟล์ไม่สำเร็จนะคะ" << endl;
         exit(1); 
     }else{
         string name;
@@ -84,7 +87,7 @@ int main()
     }
     
     
-    cout << "\nwhat's the menu you would like to eat\n";
+    cout << "\nวันนี้นายท่านอยากรับประทานอะไรหรือเจ้าคะ\n";
     int c=0,count = 1,numberofmenu = 0;
     
 
@@ -95,16 +98,17 @@ int main()
             cout << count << " - " << allstore[i].menu[j] << endl;
             count++;
             numberofmenu += 1;
+            menu_list.push_back(allstore[i].menu[j]);
         }
         
     }
     
     int menu_select;
     do{
-        cout << "Enter selection (1-" << numberofmenu << ") or Random (0): "; 
+        cout << "โปรดเลือกตัวเลขที่อยู่ด้านหน้าของเมนู (1-" << numberofmenu << ") หรือกดเลือกเลข (0) เพื่อสุ่มเมนู: "; 
         cin >> menu_select; //For now cant recieve more than 1 input.
         if(menu_select < 0 || menu_select > numberofmenu){
-        cout << "Invalid selection! Please enter a number between 0 and " << numberofmenu << "." << endl;
+        cout << "ตัวเลือกไม่ถูกต้องนะเจ้าคะ!! โปรดเลือกตัวเลขระหว่าง 0 และ " << numberofmenu << " นะเจ้าคะ" << endl;
         }
     }while(menu_select < 0 || menu_select > numberofmenu); //ถ้าจะใช้ while(-1) สลับเอา check ว่า storeselec in 0<s<i-1
     
@@ -115,7 +119,9 @@ int main()
     }
     
     string menu_need;
-    switch (menu_select) { //ดูท่าจะมีหลาย case
+    menu_need = menu_list[menu_select-1];
+
+    /*switch (menu_select) { //ดูท่าจะมีหลาย case
         case 1: 
             menu_need = "MenuA";
             break;
@@ -137,24 +143,28 @@ int main()
         case 7:
             menu_need = "MenuG";
             break;
-       }
+       }*/
 
 
+
+    
+    cout << endl << "**---------------------------**" << endl;
+    cout << "\nฉันแนะนำให้รับประทานเมนูที่นายท่านต้องการที่ร้าน " << endl;
     
     for(unsigned int i=0; i<allstore.size(); i++)
     {
         for(unsigned int j=0; j<allstore[i].menu.size(); j++)
         {
             if(allstore[i].menu[j] == menu_need){
-                cout << endl << "**---------------------------**" << endl;
-                cout << "\nWe suggest " << allstore[i].store_name << " at " << allstore[i].where;
-                cout << " to eat this day!!\n";
-                cout << endl << "**---------------------------**" << endl;
+                
+                cout << allstore[i].store_name << " บริเวณ " << allstore[i].where;
+                
             }
         }
         
     }
-    
+    cout << " ในวันนี้นะเจ้าคะ!!\n";
+    cout << endl << "**---------------------------**" << endl;
 
     return 0;
 }

@@ -9,7 +9,7 @@ void main_talk_bot(string name)
     string Choice2;
     string Choice3;
     int ListSize ;
-    vector<string> Ans1 = {"ร้อนๆหนาวๆอะ","ลองมองไปที่ท้องฟ้าสิ","น่านอนมาก"};
+    vector<string> Ans1 = {"ร้อนๆหนาวๆอะ","ลองมองไปที่ท้องฟ้าสิ","น่านอนมาก","ออกไปดูเองได้เลยจ้า ไปแตะหญ้าบ้างนะ"};
     vector<string> Ans2 = {"botชื่อว่า........ลืมไปละ","เราถูกสร้างมาเพื่อช่วยเหลือพวกที่ไม่รู้ว่าจะกินอะไร","botอยากนอน"};
     srand(time(0));
     do{
@@ -22,10 +22,10 @@ void main_talk_bot(string name)
             cout << "ออกจากฟังก์ชั่น" << endl;
             break;
         }else if(Choice == "1"){
-            cout << Ans1[rand()%Ans1.size()] << endl;
+            cout << Ans1[rand()%Ans1.size()] << endl << endl;
         }else if(Choice == "2"){
             do{
-            cout << "โปรดเลือกสิ่งที่จะถาม\n";
+            cout << "โปรดเลือกสิ่งที่จะถาม\n\n";
             cout << "(0)ไม่ถามละ\n(1)botชืออะไร\n(2)เกี่ยวกับbot\n(3)botอยากทำไร\n";
             cin >> Choice2;
             cin.clear();
@@ -38,7 +38,7 @@ void main_talk_bot(string name)
             }else if(Choice2 == "3"){
                 cout << Ans2[2] << endl;
             }else{
-            cout << "ใส่เลขผิดนะจ๊ะ" << "\n";
+            cout << "ใส่เลขผิดนะจ๊ะ" << "\n\n";
         }
             }while(Choice2 != "0");
         }else if(Choice == "3"){
@@ -52,6 +52,7 @@ void main_talk_bot(string name)
             fflush(stdin);
             //system("cls");
             if(Choice2 == "1"){
+                system("cls");
                 cout << "------------------------------------\n";
                 cout << "มีอะไรจะถามเหรอจ๊ะนายจ๊า\n";
                 cin >> Choice3;
@@ -64,14 +65,18 @@ void main_talk_bot(string name)
                 cout << "ได้" << endl;
                 cout << "------------------------------------\n";
             }
-            }
+            }else{
+            cout << "ใส่เลขผิดนะจ๊ะ" << "\n------------------------------------\n";
+        }
 
             }while(Choice2 !="0");
 
         }else{
-            cout << "ใส่เลขผิดนะจ๊ะ" << "\n";
+            cout << "ใส่เลขผิดนะจ๊ะ" << "\n\n";
         }
     }while(Choice != "0");
 
+
 }
+
 

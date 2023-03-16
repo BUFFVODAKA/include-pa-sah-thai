@@ -55,6 +55,7 @@ void cho_func2_active()
             case '3': talk_with_me_active();cho_func2_active(); break;
             case '4': Lazy_ai_intro(::name); break;
             case '5':
+                    ShareBill::share_bill();
                     cho_func2_active(); 
                     break;
             case '6':countdown::main_countdown_1();
@@ -202,9 +203,29 @@ void cho_func2_lazy()
             case '4': turn_off_lazy_text(); 
                         active_ai_intro(::name);//(::name); 
                         break;
-            case '6':countdown::main_countdown_1();
-                    cho_func2_active();
-                    break;
+            case '5': if(do_it_or_not)
+                    {
+                        ShareBill::share_bill();
+                        cho_func2_active();
+                        break;
+                    }
+                    else
+                    {
+                        cout << "ขี้เกียจอ่ะ ฉันไปก่อนล่ะ" << endl;
+                        break;
+                    } 
+
+            case '6':if(do_it_or_not)
+                    {
+                        countdown::main_countdown_1();
+                        cho_func2_active();
+                        break;
+                    }
+                    else
+                    {
+                        cout << "ขี้เกียจอ่ะ ฉันไปก่อนล่ะ" << endl;
+                        break;
+                    }
             case '0': 
 
                     for (int i = 0; i<bye.size(); i++)

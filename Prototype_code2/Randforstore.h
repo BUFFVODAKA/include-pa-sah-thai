@@ -28,7 +28,6 @@ ifstream RF2;
         void recrive_key(string k);
     };
 
-
 Store::Store(string storename)
 {
     store_name = storename;

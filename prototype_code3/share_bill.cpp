@@ -11,6 +11,7 @@ struct product {
     vector<string> people;
 };
 
+
 int main() {
     vector<product> productz;
     vector<string> people;

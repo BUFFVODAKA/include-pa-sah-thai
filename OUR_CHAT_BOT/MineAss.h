@@ -6,7 +6,6 @@
 // #include <cstdlib> // for rand and srand
 // #include <ctime> // for time
 //using namespace std;
-
 namespace MineAss{
 
 void UcanRandomMenuInThisStore(){

@@ -1,5 +1,4 @@
 #include "data_store_header.h"
-#include "command_list.h"
 
     bool want_me_to_rand_all = false;
 
@@ -151,13 +150,13 @@
         my_command::cout_delay_vector_and_wait(say);
 
         
-        RF1.open("Data//Store_list.txt");
+        RF1_1.open("Data//Store_list.txt");
         string  text;
-        vector <Store> all_store;
+        vector <Store_3> all_store;
 
-        while(getline(RF1,text))
+        while(getline(RF1_1,text))
         {
-            Store create_store(text);
+            Store_3 create_store(text);
             all_store.push_back(create_store);
         }
 
@@ -169,7 +168,7 @@
             int index = all_store.size();
             index = rand()%index;
 
-            Store A = all_store[index];
+            Store_3 A = all_store[index];
 
             index = A.acess_menu_size();
             index = rand()%index;
@@ -182,10 +181,10 @@
         }
         else
         {
-            vector <Store> sub_store;
+            vector <Store_3> sub_store;
             int index;
 
-            for(Store i: all_store)
+            for(Store_3 i: all_store)
             {
                 if(i.show_where() == where)
                 {
@@ -200,7 +199,7 @@
 
             index = rand()%sub_store.size();
 
-            Store A = sub_store[index];
+            Store_3 A = sub_store[index];
 
             index = A.acess_menu_size();
             index = rand()%index;
@@ -218,11 +217,11 @@
     //     srand(time(0));
     //     system("cls"); //clear terminal
         
-    //     RF1.open("Data//Store_list.txt");
+    //     RF1_1.open("Data//Store_list.txt");
     //     string  text;
     //     vector <Store> all_store;
 
-    //     while(getline(RF1,text))
+    //     while(getline(RF1_1,text))
     //     {
     //         Store create_store(text);
     //         all_store.push_back(create_store);

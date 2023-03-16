@@ -145,25 +145,37 @@ void UcanRandomMenuInThisStore(){
             fileName = "เจ๊ศรีกระทะร้อน";
             break;
         case 25:
-            fileName = "ไข่เจียวดาว";
+            fileName = "เจียวดาวหลังมอ2";
             break;
         case 26:
-            fileName = "ป้าอ้วน";
+            fileName = "เจียวดาวหลังมอเจ้าแรก";
             break;
         case 27:
-            fileName = "กะเพราเนื้อเนื้อ";
+            fileName = "ปูซ่าส์";
             break;
         case 28:
-            fileName = "The_Steak";
+            fileName = "ป้าอ้วน";
             break;
         case 29:
-            fileName = "บะหมี่พุงระเบิด";
+            fileName = "ก๋วยเตี๋ยวเส้นคลุกโกไข่เจ๊น้อยหลังมอ";
             break;
         case 30:
-            fileName = "ก๋วยเตี๋ยวต้มยำกุ้งน้ำข้น";
+            fileName = "ร้านอาหารยอดฮิต";
             break;
         case 31:
-            fileName = "ยำขนมจีนเจ๊เมย์";
+            fileName = "บะหมี่พุงระเบิด";
+            break;
+        case 32:
+            fileName = "ก๋วยเตี๋ยวต้มยำกุ้งน้ำข้นซุปเปอร์แซ่บ";
+            break;
+        case 33:
+            fileName = "The_Steak(เดอะสเต็ก)";
+            break;
+        case 34:
+            fileName = "กะเพราเนื้อเนื้อ";
+            break;
+        case 35:
+            fileName = "Ramenya(ราเมนยะ)";
             break;
         }
 
@@ -238,9 +250,8 @@ void UcanRandomMenuInThisStore(){
             int random = rand() % numofMenuItems;
             string randomMenuItem = menuItems[random]; //menu in vector that add before.
             cout << "┏━━━━━━━━━━━━━━━━━━━━━━━━━❂❂━━━━━━━━━━━━━━━━━━━━━━━━━┓" << endl;
-            cout << setw(50) << left << " แนะนำนะเราว่าควรเลือกเมนู";
-            cout << setw(1) << ": ";
-            cout << setw(70) << right << randomMenuItem << endl;
+            cout << setw(50) << left << " แนะนำนะเราว่าควรเลือกเมนู: ";
+            cout << randomMenuItem << endl;
             cout << "┗━━━━━━━━━━━━━━━━━━━━━━━━━❂❂━━━━━━━━━━━━━━━━━━━━━━━━━┛" << endl;
             exit(1);
             break;

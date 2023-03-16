@@ -28,6 +28,25 @@ ifstream RF2;
         void recrive_key(string k);
     };
 
+/*template <typename T>
+bool check_int(T a)
+{
+    int b;
+    bool c;
+    if(typeid(a).name() == typeid(b).name())
+    {
+        c = true;
+    }
+    else
+    {
+        c = false;
+    }
+
+    return c;
+
+}*/
+
+
 
 Store::Store(string storename)
 {
@@ -57,6 +76,10 @@ Store::Store(string storename)
     }
     RF2.close();
 }
+
+
+
+
 
 int main()
 {
@@ -104,13 +127,27 @@ int main()
     }
     
     int menu_select;
-    do{
+    do
+    {
         cout << "โปรดเลือกตัวเลขที่อยู่ด้านหน้าของเมนู (1-" << numberofmenu << ") หรือกดเลือกเลข (0) เพื่อสุ่มเมนู: "; 
-        cin >> menu_select; //For now cant recieve more than 1 input.
-        if(menu_select < 0 || menu_select > numberofmenu){
-        cout << "ตัวเลือกไม่ถูกต้องนะเจ้าคะ!! โปรดเลือกตัวเลขระหว่าง 0 และ " << numberofmenu << " นะเจ้าคะ" << endl;
+        cin >> menu_select;
+        
+        if(cin.fail()) {
+            cin.clear();
+            cin.ignore();
+            cout << "\nตัวเลือกไม่ถูกต้องนะเจ้าคะ!! ดิฉันขออนุญาตถือว่าเจ้านายจ้องการสุ่มอาหารนะเจ้าคะ\n";
+            menu_select = 0;
         }
-    }while(menu_select < 0 || menu_select > numberofmenu); //ถ้าจะใช้ while(-1) สลับเอา check ว่า storeselec in 0<s<i-1
+
+        if(menu_select < 0 || menu_select > numberofmenu)
+        {
+            cout << "\nตัวเลือกไม่ถูกต้องนะเจ้าคะ!! โปรดเลือกตัวเลขระหว่าง 0 และ " << numberofmenu << " นะเจ้าคะ\n" << endl;
+        }
+    }
+    while(menu_select < 0 || menu_select > numberofmenu || cin.fail()); 
+    
+    
+    
     
     if(menu_select == 0){
         srand(time(0));
@@ -149,7 +186,7 @@ int main()
 
     
     cout << endl << "**---------------------------**" << endl;
-    cout << "\nฉันแนะนำให้รับประทานเมนูที่นายท่านต้องการที่ร้าน " << endl;
+    cout << "\nฉันแนะนำให้รับประทานเมนู " << menu_need << " ที่ร้าน " << endl;
     
     for(unsigned int i=0; i<allstore.size(); i++)
     {

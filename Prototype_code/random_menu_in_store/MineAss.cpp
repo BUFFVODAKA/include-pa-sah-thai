@@ -74,12 +74,18 @@ void UcanRandomMenuInThisStore(){
             break;
         case 4:
             fileName = "สเต๊กลุงเม่น";
+            break;
         case 5:
-            fileName = "อาหารตามสั่ง_ByLachada";
+            fileName = "ราชาหมูทอด_เล้งแซ่บ";
         case 6:
-            fileName = "ก๋วยเตี๋ยวเป็ดแม่บุญรอด";
+            fileName = "อาหารตามสั่ง_ByLachada";
+            break;
         case 7:
+            fileName = "ก๋วยเตี๋ยวเป็ดแม่บุญรอด";
+            break;
+        case 8:
             fileName = "ข้าวมันไก่_ต่อประตูเกษตร";
+            break;
        }
 
     

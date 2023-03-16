@@ -66,7 +66,7 @@ void UcanRandomMenuInThisStore(){
     }while(storeSelection < 0 || storeSelection > numofStore); //ถ้าจะใช้ while(-1) สลับเอา check ว่า storeselec in 0<s<i-1
     
     
-    if(storeSelection == 0){
+    if(storeSelection == '0'){
         srand(time(0));
         storeSelection = rand() % numofStore + 1;
         
@@ -177,7 +177,14 @@ void UcanRandomMenuInThisStore(){
         case 35:
             fileName = "Ramenya(ราเมนยะ)";
             break;
+        default :{
+            system("cls");
+            UcanRandomMenuInThisStore(); //กรณี input ไม่ใช่ตัวเลข
+            break;
         }
+
+       
+    }
 
     
     L2.open("Data/Menu_in_store/"+ fileName + ".txt");
@@ -213,7 +220,7 @@ void UcanRandomMenuInThisStore(){
     
     int numofMenuItems = menuItems.size();
     if (numofMenuItems == 0) {
-        cout << "ร้่านนี้ไม่มีเมนู (แล้วเขาเปิดร้านทำไม?)" << endl;
+        cout << "ร้านนี้ไม่มีเมนู (แล้วเขาเปิดร้านทำไม?)" << endl;
         exit(1); // check that store have menu otherwise end.
        
     }

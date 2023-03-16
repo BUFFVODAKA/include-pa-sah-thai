@@ -4,6 +4,7 @@
 #include "rand_store_and_food_main.h"
 #include "TalkCodeV1.h" //talk_bot
 #include "countdown.h"
+#include "share_bill.h"
 
 string name;
 
@@ -21,7 +22,7 @@ void talk_with_me_active()
 
 void cho_func2_active()
 {
-    vector <string> list_command = {"สุ่มร้านอาหาร(1)                        (แนะนำ ฟังก์ชั่นหลักเลย)","สุ่มเครื่องดื่ม(2)                         (จะลองก็ได้นะ อันนี้)","คุยเล่นกับฉัน(3)                         (ฉันใช้ if-else เด้อ ไม่ใช่ Ai อย่าหวังเยอะจะดีกว่า)","เปิดโหมบอทขี้เกียจ(4)                    (แน่ใจรึ ว่า จะเล่นอันนี้้)","(5)","นับเวลาถอยหลัง(6)                      (ลองก็ได้นะ ตั้งใจทำอยู่)","ออก(0)"};
+    vector <string> list_command = {"สุ่มร้านอาหาร(1)                        (แนะนำ ฟังก์ชั่นหลักเลย)","สุ่มเครื่องดื่ม(2)                         (จะลองก็ได้นะ อันนี้)","คุยเล่นกับฉัน(3)                         (ฉันใช้ if-else เด้อ ไม่ใช่ Ai อย่าหวังเยอะจะดีกว่า)","เปิดโหมบอทขี้เกียจ(4)                    (แน่ใจรึ ว่า จะเล่นอันนี้้)","คำนวณการแชร์บิล(5)","นับเวลาถอยหลัง(6)                      (ลองก็ได้นะ ตั้งใจทำอยู่)","ออก(0)"};
     string bye = "โอเค แล้วเจอกันใหม่นะ";
 
     string ANS;
@@ -54,7 +55,6 @@ void cho_func2_active()
             case '3': talk_with_me_active();cho_func2_active(); break;
             case '4': Lazy_ai_intro(::name); break;
             case '5':
-                    
                     cho_func2_active(); 
                     break;
             case '6':countdown::main_countdown_1();

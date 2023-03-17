@@ -6,6 +6,7 @@ namespace countdown
     #define elif else if
 
     bool already_stop;
+    bool already_open;
     int ti;
 
     def countdown(int Ti);
@@ -145,6 +146,7 @@ namespace countdown
         ti = time[index];
 
         system(song.c_str());
+        already_open = true;
     }
 
     def countdown_again(int Ti)
@@ -255,7 +257,7 @@ namespace countdown
 
         if(second) 
         {
-            say = "OK ถ้าจะหยุดก่อนก็กด esc นะ\nแล้วก็ถ้าไม่มากดฉันก็จะเปิดเพลงอยู่อย่างนี้แหละ\n";
+            say = "OK ถ้าจะหยุดก่อนก็กด esc นะ\nแล้วก็ถ้าไม่มากดฉันก็จะเปิดเพลงอยู่อย่างนี้แหละ (เราจะใช้เวลาในการเปิดเพลงประมาณ 2 วินาที)\n";
             my_command::cout_string_delay_not_endl(say);
             countdown(second);
         }
@@ -265,7 +267,7 @@ namespace countdown
         }
 
         system("cls");
-        cout << "เพลงที่เปิดไว้ก็ปิดเองเลยละกันนะ\n";
+        if(already_open) cout << "เพลงที่เปิดไว้ก็ปิดเองเลยละกันนะ\n";
         cout << "ออกจากฟังก์ชั่นนับถอยหลังแล้ว\n\n" << endl;
     }
 }

@@ -87,6 +87,7 @@ namespace main_function
                 pass;
                 break;
             case '0':
+                want_me_to_work = false;
                 break;
             
             default:

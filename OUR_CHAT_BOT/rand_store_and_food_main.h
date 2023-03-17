@@ -102,6 +102,7 @@ namespace main_function
     void intro_rand_food_store()
     {
         want_me_to_work = 1;
+        system("cls");
 
         vector <string> say = {"โอเค เดี๋ยวเราสุ่มให้นะ","ว่าแต่ สุ่มแบบไหนดีล่ะ\n"};
         my_command::cout_delay_vector_and_wait(say);

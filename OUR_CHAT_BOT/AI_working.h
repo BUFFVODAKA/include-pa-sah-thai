@@ -36,7 +36,8 @@ void cho_func2_active()
 
     if (ANS.size()>1)
     {
-        cout << "ขอโทษนะ เราเข้าใจแค่เลข 1-4 เท่านั้น" << endl;
+        system("cls");
+        cout << "ขอโทษนะ เราเข้าใจแค่เลข 0-6 เท่านั้น" << endl;
         cho_func2_active();
     }
     else
@@ -72,7 +73,7 @@ void cho_func2_active()
                     cout << endl;
                     break;
 
-            default: cout<< "ขอโทษนะ เราเข้าใจแค่เลข 0-6 เท่านั้น" << endl ; cho_func2_active(); break;
+            default: system("cls"); cout<< "ขอโทษนะ เราเข้าใจแค่เลข 0-6 เท่านั้น\n" << endl ; cho_func2_active(); break;
         }
     }
 }
@@ -165,7 +166,8 @@ void cho_func2_lazy()
 
     if (ANS.size()>1)
     {
-        cout << "ขอโทษนะ เราเข้าใจแค่เลข 1-4 เท่านั้น" << endl;
+        system("cls");
+        cout << "ขอโทษนะ เราเข้าใจแค่เลข 0-6 เท่านั้น\n" << endl;
         cho_func2_lazy();
     }
     else
@@ -176,7 +178,8 @@ void cho_func2_lazy()
         {
             case '1': if(do_it_or_not())
                         {
-                            cout << "รอเรียกใช้ฟังก์ชั่นหลักของกลุ่มเรา (AI_working.h line 142 and 36)" << endl; //รอเรียกใช้ function หลักของกลุ่มเรา
+                            //cout << "รอเรียกใช้ฟังก์ชั่นหลักของกลุ่มเรา (AI_working.h line 142 and 36)" << endl; //รอเรียกใช้ function หลักของกลุ่มเรา
+                            main_function::intro_rand_food_store(); 
                             cho_func2_lazy(); 
                             break; 
                         }
@@ -201,12 +204,12 @@ void cho_func2_lazy()
             case '3': talk_with_me_lazy(do_it_or_not());
                     break;
             case '4': turn_off_lazy_text(); 
-                        active_ai_intro(::name);//(::name); 
+                        cho_func2_lazy();
                         break;
             case '5': if(do_it_or_not)
                     {
                         ShareBill::share_bill();
-                        cho_func2_active();
+                        cho_func2_lazy();
                         break;
                     }
                     else
@@ -218,7 +221,7 @@ void cho_func2_lazy()
             case '6':if(do_it_or_not)
                     {
                         countdown::main_countdown_1();
-                        cho_func2_active();
+                        cho_func2_lazy();
                         break;
                     }
                     else
@@ -236,7 +239,7 @@ void cho_func2_lazy()
                     cout << endl;
                     break;
 
-            default: cout<< "ขอโทษนะ เราเข้าใจแค่เลข 1-4 เท่านั้น" << endl ; cho_func2_lazy(); break;
+            default: system("cls");cout<< "ขอโทษนะ เราเข้าใจแค่เลข 0-6 เท่านั้น" << endl ; cho_func2_lazy(); break;
         }
     }
 }

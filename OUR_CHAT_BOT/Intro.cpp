@@ -68,7 +68,6 @@ void give_name(string &name)
     }
     while(flag != true);
 
-    cout << "exit while" << endl; //debug
 }
 
 int main()
@@ -78,7 +77,6 @@ int main()
     string name = "อับดุล"; // เปลี่ยนชื่อได้นะ
 
     give_name(name);
-    cout << "end give name" << endl; //debug
     system("cls");
 
     active_ai_intro(name);
